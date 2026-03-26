@@ -185,10 +185,10 @@ const SCENARIO_POOL = [
     impact:`📞 Last quarter, 12,000 escrow statements were mailed. <strong>1,840 were undeliverable.</strong> Borrowers missed tax notices, triggering complaints to the state mortgage regulator.`,
     collibra:`Collibra\'s Data Catalog module can house all discovered assets, owners, and lineage once populated. Right now it\'s an empty shell — your first job is to give it something to work with.`,
     choices:[
-      {text:'Ask IT to export a list of all databases they manage and load it directly into Collibra.',effects:{dataQuality:+2,bizTrust:+3,literacy:+2,budget:-4000,workdays:-3}},
-      {text:'Purchase Collibra licenses for each team and ask them to self-register their assets.',effects:{dataQuality:+2,bizTrust:+2,literacy:+3,budget:-38000,workdays:-5}},
-      {text:'Declare the LOS as the official system of record and mandate everyone migrate to it.',effects:{dataQuality:+4,bizTrust:-8,literacy:0,budget:-5000,workdays:-4}},
-      {text:'Run a structured data asset inventory across all departments and populate Collibra with every system, dataset, and owner.',effects:{dataQuality:+8,bizTrust:+12,literacy:+6,budget:-18000,workdays:-14}}
+      {text:'Ask IT to export a database list and load it into Collibra as a starting point.',effects:{dataQuality:+2,bizTrust:+3,literacy:+2,budget:-4000,workdays:-3}},
+      {text:'Declare the LOS as the official system of record and require all teams to migrate their data there.',effects:{dataQuality:+4,bizTrust:-8,literacy:0,budget:-5000,workdays:-4}},
+      {text:'Ask each business team to self-register their own data assets into Collibra over the next 30 days.',effects:{dataQuality:+3,bizTrust:+4,literacy:+4,budget:-8000,workdays:-6}},
+      {text:'Conduct structured interviews across all departments to inventory every system, dataset, and owner — then populate Collibra.',effects:{dataQuality:+8,bizTrust:+12,literacy:+6,budget:-18000,workdays:-14}}
     ],
     outcomes:[
       {text:'IT lists 14 databases in Collibra. But 6 business-managed spreadsheets and SaaS tools are absent. A partial catalog people trust can be worse than none.',lesson:'IT sees infrastructure. Business teams see applications and files. A complete catalog requires both.'},
@@ -205,10 +205,10 @@ const SCENARIO_POOL = [
     impact:`📊 The board has received conflicting delinquency figures in three consecutive quarterly reports. A board member formally asked the CEO to <strong>"explain the inconsistency in your data."</strong>`,
     collibra:`Collibra\'s Business Glossary is purpose-built for this — creating agreed terms, assigning stewards, and linking definitions to the data assets that use them.`,
     choices:[
-      {text:'Add a footnote to the board report explaining each team uses a different definition.',effects:{dataQuality:0,bizTrust:-10,literacy:0,budget:-1000,workdays:-1}},
-      {text:'Publish Finance\'s definition in Collibra as official since they own board reporting.',effects:{dataQuality:+4,bizTrust:-5,literacy:+2,budget:-3000,workdays:-3}},
-      {text:'Build a data dictionary mapping all three definitions to their systems and load into Collibra.',effects:{dataQuality:+6,bizTrust:+5,literacy:+5,budget:-8000,workdays:-8}},
-      {text:'Convene Finance, Collections, and Risk in a working group to agree on one definition — publish it as Loan & Behold Mortgage Company\'s first official Collibra glossary term.',effects:{dataQuality:+10,bizTrust:+16,literacy:+9,budget:-12000,workdays:-12}}
+      {text:'Add a footnote to the board report explaining that each team uses a different 30/60/90-day definition.',effects:{dataQuality:0,bizTrust:-10,literacy:0,budget:-1000,workdays:-1}},
+      {text:'Publish Finance\'s definition in Collibra as the official standard since they own board reporting.',effects:{dataQuality:+4,bizTrust:-5,literacy:+2,budget:-3000,workdays:-3}},
+      {text:'Ask each team to submit their definition in writing so you can document all three in a shared data dictionary.',effects:{dataQuality:+5,bizTrust:+4,literacy:+5,budget:-7000,workdays:-7}},
+      {text:'Convene Finance, Collections, and Risk in a facilitated working session to agree on a single tiered definition — then publish it as the company\'s first Collibra glossary term.',effects:{dataQuality:+10,bizTrust:+16,literacy:+9,budget:-12000,workdays:-12}}
     ],
     outcomes:[
       {text:'The board member replies: "This is not a footnote problem. This is a data problem." Your program is called out by name.',lesson:'Documenting confusion is not resolving it. The business expects governance to drive alignment.'},
@@ -225,10 +225,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ Without classification, InfoSec can\'t enforce appropriate access controls. When a quality issue surfaces, <strong>nobody knows whether affected records require escalated handling</strong> or routine treatment.`,
     collibra:`Collibra supports custom classification tiers and automated tagging. Once defined, sensitivity labels surface across all cataloged assets — giving InfoSec, IT, and Governance a shared view.`,
     choices:[
-      {text:'Table classification until the catalog is more fully populated — get the basics right first.',effects:{dataQuality:-3,bizTrust:-3,literacy:0,budget:0,workdays:0}},
-      {text:'Ask InfoSec to build the classification scheme since it\'s primarily a security concern.',effects:{dataQuality:+2,bizTrust:-4,literacy:+3,budget:-3000,workdays:-2}},
-      {text:'Use Collibra\'s auto-classification to tag assets based on field names and data patterns.',effects:{dataQuality:+6,bizTrust:+6,literacy:+4,budget:-14000,workdays:-5}},
-      {text:'Design a four-tier classification scheme (Public, Internal, Confidential, Restricted) with Loan & Behold Mortgage Company-specific examples, get it approved, then tag all Collibra assets.',effects:{dataQuality:+10,bizTrust:+14,literacy:+12,budget:-20000,workdays:-18}}
+      {text:'Table classification for now — focus on getting the catalog fully populated before adding complexity.',effects:{dataQuality:-3,bizTrust:-3,literacy:0,budget:0,workdays:0}},
+      {text:'Ask InfoSec to lead the classification effort since data protection is primarily their responsibility.',effects:{dataQuality:+2,bizTrust:-4,literacy:+3,budget:-3000,workdays:-2}},
+      {text:'Run Collibra\'s auto-classification tool against all cataloged assets and publish the results as the starting framework.',effects:{dataQuality:+6,bizTrust:+6,literacy:+4,budget:-14000,workdays:-5}},
+      {text:'Design a four-tier classification scheme with Loan & Behold examples, get it approved by governance and InfoSec, then tag all Collibra assets by tier.',effects:{dataQuality:+10,bizTrust:+14,literacy:+12,budget:-20000,workdays:-18}}
     ],
     outcomes:[
       {text:'Six months later, a quality issue surfaces and nobody can determine if affected records are routine or Restricted — so the entire incident is escalated at maximum cost.',lesson:'Classification enables access control, retention, and quality escalation. Deferring it doesn\'t reduce risk — it delays your ability to respond.'},
@@ -245,10 +245,10 @@ const SCENARIO_POOL = [
     impact:`💸 Affected borrowers billed at wrong rate for an average of <strong>4.2 months</strong>. Total financial exposure: estimated <strong>$186,000 in billing errors</strong> with regulatory notification obligations if overcharges are confirmed.`,
     collibra:null,
     choices:[
-      {text:'Fix the validation rule going forward and let Servicing handle the backlog of 214 affected loans.',effects:{dataQuality:+6,bizTrust:-8,literacy:0,budget:-4000,workdays:-2}},
-      {text:'Escalate to the CTO to re-architect the LOS-to-servicing integration.',effects:{dataQuality:+4,bizTrust:+3,literacy:0,budget:-8000,workdays:-4}},
-      {text:'Conduct a full audit of all LOS-to-servicing field mappings before correcting the 214 loans.',effects:{dataQuality:+10,bizTrust:+6,literacy:+4,budget:-20000,workdays:-16}},
-      {text:'Stop the error immediately: re-enable the validation rule, audit all 214 loans, and partner with Servicing to remediate every affected borrower.',effects:{dataQuality:+18,bizTrust:+14,literacy:+5,budget:-35000,workdays:-20}}
+      {text:'Re-enable the validation rule going forward and let Servicing manage the 214 affected loans on their own timeline.',effects:{dataQuality:+6,bizTrust:-8,literacy:0,budget:-4000,workdays:-2}},
+      {text:'Escalate to the CTO to redesign the LOS-to-servicing integration so the decimal format mismatch can\'t recur.',effects:{dataQuality:+4,bizTrust:+3,literacy:0,budget:-8000,workdays:-4}},
+      {text:'Audit all LOS-to-servicing field mappings first to find any other errors before touching the 214 affected loans.',effects:{dataQuality:+10,bizTrust:+6,literacy:+4,budget:-20000,workdays:-16}},
+      {text:'Stop the error immediately: restore the validation rule, identify all 214 loans, and partner with Servicing to remediate every affected borrower.',effects:{dataQuality:+18,bizTrust:+14,literacy:+5,budget:-35000,workdays:-20}}
     ],
     outcomes:[
       {text:'Servicing overwhelmed without governance support. Three borrowers file CFPB complaints. Program criticized for "finding the problem and walking away."',lesson:'Governance doesn\'t stop at detection. Partnering through remediation is what earns lasting business trust.'},
@@ -265,10 +265,10 @@ const SCENARIO_POOL = [
     impact:`📋 Without documented lineage, you cannot answer the CFPB. Compliance has a <strong>30-day response window.</strong> Inability to demonstrate data integrity may trigger a fair lending investigation.`,
     collibra:`Collibra\'s Data Lineage module can automatically harvest lineage from ETL tools and BI platforms — but integration hasn\'t been done yet.`,
     choices:[
-      {text:'Tell Compliance you\'ll document lineage going forward but cannot reconstruct the past for this filing.',effects:{dataQuality:-5,bizTrust:-12,literacy:0,budget:-2000,workdays:-1}},
-      {text:'Document what you can, identify the Excel step as the likely source, and be transparent with Compliance about the gap.',effects:{dataQuality:+7,bizTrust:+9,literacy:+6,budget:-10000,workdays:-8}},
-      {text:'Prioritize getting Collibra lineage integration fully operational before responding to the CFPB.',effects:{dataQuality:+5,bizTrust:+3,literacy:+4,budget:-42000,workdays:-25}},
-      {text:'Manually trace the full pipeline, deliver a lineage map to Compliance, and simultaneously begin Collibra lineage integration so this never happens again.',effects:{dataQuality:+14,bizTrust:+12,literacy:+8,budget:-26000,workdays:-22}}
+      {text:'Tell Compliance you cannot reconstruct lineage for past filings but will document all pipelines going forward.',effects:{dataQuality:-5,bizTrust:-12,literacy:0,budget:-2000,workdays:-1}},
+      {text:'Manually trace the full four-system pipeline, deliver a lineage map to Compliance for the CFPB response, and begin Collibra lineage integration.',effects:{dataQuality:+14,bizTrust:+12,literacy:+8,budget:-26000,workdays:-22}},
+      {text:'Document what you can verify, identify the Excel step as the likely source, and proactively disclose the gap to Compliance with a remediation plan.',effects:{dataQuality:+7,bizTrust:+9,literacy:+6,budget:-10000,workdays:-8}},
+      {text:'Prioritize completing the Collibra lineage integration first so you can respond to the CFPB with automated, system-generated lineage documentation.',effects:{dataQuality:+5,bizTrust:+3,literacy:+4,budget:-42000,workdays:-25}}
     ],
     outcomes:[
       {text:'Compliance submits a response admitting lineage cannot be reconstructed. CFPB opens a supervisory inquiry. Your program cited as lacking basic traceability controls.',lesson:'Lineage must exist before the regulator asks. "We\'ll do it going forward" is not an acceptable answer.'},
@@ -285,10 +285,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ Finance estimates these <strong>831 accounts represent $4.2M in at-risk loan balances.</strong> Regulatory guidance requires "reasonable contact attempts" before foreclosure.`,
     collibra:`Collibra\'s data quality rules can be configured to monitor contact completeness and flag degradation before it becomes a crisis.`,
     choices:[
-      {text:'Present the 23% invalid contact rate to executives as evidence that more governance investment is needed.',effects:{dataQuality:0,bizTrust:+7,literacy:+4,budget:-4000,workdays:-3}},
-      {text:'Hire a data cleansing vendor to batch-update all 831 borrower records right now.',effects:{dataQuality:+8,bizTrust:+8,literacy:+2,budget:-22000,workdays:-5}},
-      {text:'Work with IT to add address validation at loan origination — the most upstream fix.',effects:{dataQuality:+10,bizTrust:+6,literacy:+4,budget:-14000,workdays:-10}},
-      {text:'Design a contact data quality framework: mandatory validation at origination, USPS address verification, quarterly freshness review — with rules documented in Collibra.',effects:{dataQuality:+16,bizTrust:+14,literacy:+8,budget:-28000,workdays:-20}}
+      {text:'Present the 23% invalid contact rate to executives as evidence that governance investment is urgently needed.',effects:{dataQuality:0,bizTrust:+7,literacy:+4,budget:-4000,workdays:-3}},
+      {text:'Hire a vendor to batch-clean all 831 unreachable borrower records right now so Collections can resume contact attempts.',effects:{dataQuality:+8,bizTrust:+8,literacy:+2,budget:-22000,workdays:-5}},
+      {text:'Work with IT to add real-time address validation at loan origination — fixing the entry point where bad data enters.',effects:{dataQuality:+10,bizTrust:+6,literacy:+4,budget:-14000,workdays:-10}},
+      {text:'Build a contact quality framework: mandatory USPS validation at origination, quarterly freshness reviews, and quality rules documented in Collibra.',effects:{dataQuality:+16,bizTrust:+14,literacy:+8,budget:-28000,workdays:-20}}
     ],
     outcomes:[
       {text:'The presentation lands well and secures future budget. But the 831 unreachable borrowers are still unreachable.',lesson:'Using data quality failures to justify investment is legitimate. But don\'t let advocacy replace action when borrowers are already harmed.'},
@@ -305,10 +305,10 @@ const SCENARIO_POOL = [
     impact:`📈 The executive team\'s "Purchase vs. Refinance mix" dashboard has been showing inaccurate data for <strong>14 months.</strong> Strategic market entry decisions have been based on a flawed view of the loan portfolio.`,
     collibra:`In Collibra, every business term and data asset can have a named Data Steward with an approval workflow and linked policies. Without a steward assigned, accountability belongs to nobody.`,
     choices:[
-      {text:'Add the inconsistency to the Collibra data quality dashboard as a tracked issue.',effects:{dataQuality:+2,bizTrust:-4,literacy:+2,budget:-3000,workdays:-2}},
-      {text:'Rebuild dashboard logic to handle all three value formats through complex BI-layer mapping rules.',effects:{dataQuality:+4,bizTrust:+5,literacy:0,budget:-20000,workdays:-12}},
-      {text:'Standardize the field in the data warehouse only — that\'s what feeds the executive dashboards.',effects:{dataQuality:+7,bizTrust:+4,literacy:+3,budget:-8000,workdays:-7}},
-      {text:'Designate a business Data Steward for Loan Purpose in Collibra: document canonical definition, approved values, and cross-system mapping rules — then align all three systems.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-10000,workdays:-15}}
+      {text:'Log the inconsistency in Collibra\'s data quality dashboard as a tracked issue awaiting assignment.',effects:{dataQuality:+2,bizTrust:-4,literacy:+2,budget:-3000,workdays:-2}},
+      {text:'Fix the executive dashboard by rebuilding the BI-layer mapping to handle all three value formats from each system.',effects:{dataQuality:+4,bizTrust:+5,literacy:0,budget:-20000,workdays:-12}},
+      {text:'Standardize the Loan Purpose field values in the data warehouse so all downstream dashboards pull consistent values.',effects:{dataQuality:+7,bizTrust:+4,literacy:+3,budget:-8000,workdays:-7}},
+      {text:'Assign a named Data Steward for Loan Purpose in Collibra, document the canonical value set, and align all three source systems to the approved definition.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-10000,workdays:-15}}
     ],
     outcomes:[
       {text:'Issue logged in Collibra. Business asks: "Great — when will it be fixed?" You\'ve measured the problem without committing to resolving it.',lesson:'Quality issues in Collibra should always have an assigned owner and resolution timeline.'},
@@ -325,10 +325,10 @@ const SCENARIO_POOL = [
     impact:`📋 These errors flow into executive dashboards and regulatory reports. Correcting the backlog requires <strong>manual review of 620 applications — a $40,000+ rework effort.</strong>`,
     collibra:`Collibra\'s business glossary definitions can be surfaced directly inside applications via API — so the definition of "Home Improvement" appears as a tooltip right in the LOS field.`,
     choices:[
-      {text:'Flag the 620 errors for manual review and correction by a dedicated QC team.',effects:{dataQuality:+5,bizTrust:-2,literacy:0,budget:-30000,workdays:-10}},
-      {text:'Add mandatory field-level validation in the LOS to prevent technically incorrect values.',effects:{dataQuality:+12,bizTrust:+7,literacy:+4,budget:-18000,workdays:-8}},
-      {text:'Surface Collibra business glossary definitions as in-app tooltips directly inside the LOS fields.',effects:{dataQuality:+10,bizTrust:+10,literacy:+12,budget:-14000,workdays:-10}},
-      {text:'Design and deliver a data literacy training for all loan officers with real Loan & Behold Mortgage Company examples.',effects:{dataQuality:+10,bizTrust:+12,literacy:+18,budget:-15000,workdays:-14}}
+      {text:'Flag all 620 errors and assign a dedicated QC team to manually review and correct each application.',effects:{dataQuality:+5,bizTrust:-2,literacy:0,budget:-30000,workdays:-10}},
+      {text:'Add mandatory field-level validation in the LOS so loan officers can\'t submit technically invalid values.',effects:{dataQuality:+12,bizTrust:+7,literacy:+4,budget:-18000,workdays:-8}},
+      {text:'Surface Collibra glossary definitions as in-app tooltips directly inside the LOS fields so officers see guidance at the point of entry.',effects:{dataQuality:+10,bizTrust:+10,literacy:+12,budget:-14000,workdays:-10}},
+      {text:'Deliver a focused data literacy training for all loan officers using real Loan & Behold examples for every commonly misused field.',effects:{dataQuality:+10,bizTrust:+12,literacy:+18,budget:-15000,workdays:-14}}
     ],
     outcomes:[
       {text:'Backlog cleared in 6 weeks at significant cost. Root cause completely unchanged. Same errors accumulate next quarter.',lesson:'Manual rework is expensive and temporary. Governance that invests in upstream literacy prevents the rework from ever forming.'},
@@ -345,10 +345,10 @@ const SCENARIO_POOL = [
     impact:`📉 The executive team makes staffing and resource decisions on gut feel because <strong>"the numbers never agree."</strong>`,
     collibra:`Collibra\'s Data Catalog can designate one report as certified and authoritative — visibly marked as "Governed" and linked to the business definition of "loan pipeline."`,
     choices:[
-      {text:'Present the three-report problem to the CEO as justification for deeper governance investment.',effects:{dataQuality:0,bizTrust:-8,literacy:0,budget:-2000,workdays:-1}},
-      {text:'Certify the LOS report in Collibra as the authoritative version and notify all teams.',effects:{dataQuality:+6,bizTrust:+3,literacy:+2,budget:-5000,workdays:-3}},
-      {text:'Build a reconciliation report showing all three figures side-by-side with explanations.',effects:{dataQuality:+5,bizTrust:+5,literacy:+6,budget:-12000,workdays:-8}},
-      {text:'Convene all three report owners, agree on one governed definition, certify one authoritative report in Collibra, and retire the other two.',effects:{dataQuality:+14,bizTrust:+20,literacy:+10,budget:-14000,workdays:-16}}
+      {text:'Present the three-report problem directly to the CEO as justification for deeper governance investment.',effects:{dataQuality:0,bizTrust:-8,literacy:0,budget:-2000,workdays:-1}},
+      {text:'Certify the LOS report in Collibra as the authoritative version and notify all teams to retire their copies.',effects:{dataQuality:+6,bizTrust:+3,literacy:+2,budget:-5000,workdays:-3}},
+      {text:'Build a reconciliation report showing all three figures side-by-side with clear explanations of why they differ.',effects:{dataQuality:+5,bizTrust:+5,literacy:+6,budget:-12000,workdays:-8}},
+      {text:'Convene all three report owners, agree on one governed definition of pipeline, and certify a single authoritative report in Collibra.',effects:{dataQuality:+14,bizTrust:+20,literacy:+10,budget:-14000,workdays:-16}}
     ],
     outcomes:[
       {text:'The CEO replies: "I didn\'t hire you to show me problems. I hired you to fix them."',lesson:'When an executive is directly experiencing a data problem, governance must respond with action first.'},
@@ -365,10 +365,10 @@ const SCENARIO_POOL = [
     impact:`📌 This is your most important moment. The decisions made across the previous nine months will either make this answer compelling — or thin and defensive.`,
     collibra:`Collibra\'s usage metrics — certified assets, active stewards, glossary term adoption, quality rule coverage — tell the governance health story. But the board needs business outcomes, not tool metrics.`,
     choices:[
-      {text:'Frame everything around risk avoided — "without governance, the billing error could have triggered a regulatory action."',effects:{dataQuality:+3,bizTrust:+4,literacy:+2,budget:+5000,workdays:0}},
-      {text:'Show the Collibra adoption dashboard: assets cataloged, glossary terms defined, quality rules implemented, stewards assigned.',effects:{dataQuality:+4,bizTrust:+6,literacy:+4,budget:+10000,workdays:-2}},
-      {text:'Be candid: the program is still early. Share what\'s been built, what isn\'t working, and commit to a Year 2 roadmap with specific business outcome targets.',effects:{dataQuality:+5,bizTrust:+12,literacy:+5,budget:+30000,workdays:-3}},
-      {text:'Present a business impact case: connect every initiative to a dollar or borrower outcome, and show Collibra adoption metrics as proof of program health.',effects:{dataQuality:+8,bizTrust:+22,literacy:+8,budget:+80000,workdays:-5}}
+      {text:'Lead with regulatory risk avoided — show how governance prevented billing errors from becoming a CFPB enforcement action.',effects:{dataQuality:+3,bizTrust:+4,literacy:+2,budget:+5000,workdays:0}},
+      {text:'Walk through the Collibra adoption dashboard: assets cataloged, glossary terms published, quality rules active, stewards named.',effects:{dataQuality:+4,bizTrust:+6,literacy:+4,budget:+10000,workdays:-2}},
+      {text:'Acknowledge the program is still maturing, share what is and isn\'t working, and commit to a Year 2 roadmap with specific measurable targets.',effects:{dataQuality:+5,bizTrust:+12,literacy:+5,budget:+30000,workdays:-3}},
+      {text:'Present a business impact case: connect each initiative to a dollar amount or borrower outcome, backed by Collibra adoption metrics as proof of program health.',effects:{dataQuality:+8,bizTrust:+22,literacy:+8,budget:+80000,workdays:-5}}
     ],
     outcomes:[
       {text:'CFO says: "Risk avoidance is hard to budget for. Show me value created, not harm imagined." Minimal increase.',lesson:'Risk framing works with Compliance audiences. Finance audiences respond to value created. Know your room.'},
@@ -385,10 +385,10 @@ const SCENARIO_POOL = [
     impact:`📊 <strong>Executives are making capacity and staffing decisions</strong> based on loan count figures that differ by nearly 20%. One team\'s "active" is another team\'s "closed."`,
     collibra:`Collibra\'s Business Glossary can link a single approved definition of "Active Loan" to both the LOS and servicing platform\'s data assets — resolving the ambiguity at the source.`,
     choices:[
-      {text:'Declare Operations\' count as the authoritative number since they originated the loans.',effects:{dataQuality:+3,bizTrust:-6,literacy:+1,budget:-2000,workdays:-2}},
-      {text:'Document all nine definitions in a data dictionary for reference.',effects:{dataQuality:+4,bizTrust:+3,literacy:+4,budget:-6000,workdays:-6}},
-      {text:'Create a mapping table in the data warehouse that translates between the two systems\' status codes.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-12000,workdays:-8}},
-      {text:'Facilitate a cross-functional working session to agree on one canonical definition, publish it in Collibra, and update both systems.',effects:{dataQuality:+12,bizTrust:+14,literacy:+10,budget:-14000,workdays:-14}}
+      {text:'Declare Operations\' loan count as authoritative since they originated the loans and know the portfolio best.',effects:{dataQuality:+3,bizTrust:-6,literacy:+1,budget:-2000,workdays:-2}},
+      {text:'Document all nine current definitions in a shared data dictionary so teams at least understand what each other means.',effects:{dataQuality:+4,bizTrust:+3,literacy:+4,budget:-6000,workdays:-6}},
+      {text:'Build a warehouse mapping table that translates between LOS and servicing status codes so dashboards always reconcile.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-12000,workdays:-8}},
+      {text:'Facilitate a cross-functional working session with both teams to agree on one canonical definition and publish it in Collibra\'s glossary.',effects:{dataQuality:+12,bizTrust:+14,literacy:+10,budget:-14000,workdays:-14}}
     ],
     outcomes:[
       {text:'Servicing and Finance reject the mandate. Each continues its own count. The executive confusion deepens.',lesson:'Picking a winner without consensus just creates a different kind of conflict.'},
@@ -405,10 +405,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ Over-retention creates liability exposure. Under-retention creates <strong>regulatory violations</strong> — RESPA requires certain mortgage records to be kept for 3–7 years. Without a policy, both risks exist simultaneously.`,
     collibra:`Collibra\'s Policy Manager can link data retention rules directly to data assets in the catalog — so every dataset has a documented, enforced retention schedule that IT can act on.`,
     choices:[
-      {text:'Ask Legal to draft a retention policy and wait for their guidance before taking action.',effects:{dataQuality:+2,bizTrust:+2,literacy:+2,budget:-5000,workdays:-3}},
-      {text:'Have IT delete everything older than 7 years immediately to reduce storage costs.',effects:{dataQuality:-5,bizTrust:-6,literacy:0,budget:+8000,workdays:-3}},
-      {text:'Create a retention schedule for the top 10 highest-volume document types and enforce it in Collibra.',effects:{dataQuality:+8,bizTrust:+8,literacy:+6,budget:-12000,workdays:-10}},
-      {text:'Build a comprehensive data retention framework: classify all data by type, document required retention periods by regulation, link to Collibra assets, and automate enforcement with IT.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-22000,workdays:-18}}
+      {text:'Ask Legal to draft a retention policy and wait for their written guidance before taking any deletion action.',effects:{dataQuality:+2,bizTrust:+2,literacy:+2,budget:-5000,workdays:-3}},
+      {text:'Have IT immediately delete everything older than seven years to reduce storage liability and costs.',effects:{dataQuality:-5,bizTrust:-6,literacy:0,budget:+8000,workdays:-3}},
+      {text:'Build a retention schedule for the ten highest-volume document types, get it approved, and enforce it in Collibra.',effects:{dataQuality:+8,bizTrust:+8,literacy:+6,budget:-12000,workdays:-10}},
+      {text:'Develop a full retention framework: classify all data types, map required periods to each regulation, link to Collibra assets, and automate enforcement with IT.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-22000,workdays:-18}}
     ],
     outcomes:[
       {text:'Legal takes 8 weeks. In the meantime, more documents are deleted accidentally. When the policy finally arrives, it takes another 6 weeks to implement.',lesson:'Governance shouldn\'t wait for Legal to lead — partner with them, but own the implementation.'},
@@ -425,10 +425,10 @@ const SCENARIO_POOL = [
     impact:`📋 Duplicate records inflate portfolio counts, corrupt analytics, and create <strong>regulatory reporting errors</strong>. The servicing team has accidentally sent the same borrower 14 copies of every communication.`,
     collibra:`Collibra\'s Data Quality module can define uniqueness rules — flagging duplicate records before they enter downstream systems and surfacing existing quality debt in a prioritized remediation queue.`,
     choices:[
-      {text:'Run a one-time deduplication script across all systems to merge duplicate records.',effects:{dataQuality:+8,bizTrust:+5,literacy:+2,budget:-15000,workdays:-8}},
-      {text:'Add a borrower search-before-create requirement in the LOS to prevent new duplicates at entry.',effects:{dataQuality:+10,bizTrust:+8,literacy:+4,budget:-10000,workdays:-7}},
-      {text:'Create a "golden record" standard in Collibra: define what a complete borrower record looks like and use it as the deduplication template.',effects:{dataQuality:+8,bizTrust:+9,literacy:+8,budget:-12000,workdays:-10}},
-      {text:'Implement a master data management approach: golden record standard in Collibra, deduplication rules, search-before-create enforcement, and a quarterly data quality review.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-20}}
+      {text:'Run a one-time deduplication script across all systems to merge the existing duplicate borrower records.',effects:{dataQuality:+8,bizTrust:+5,literacy:+2,budget:-15000,workdays:-8}},
+      {text:'Add a mandatory search-before-create step in the LOS so loan officers must check for existing records before creating new ones.',effects:{dataQuality:+10,bizTrust:+8,literacy:+4,budget:-10000,workdays:-7}},
+      {text:'Define a "golden record" standard for borrower data in Collibra — what fields are required, what formats are authoritative — and publish it as the company data standard.',effects:{dataQuality:+8,bizTrust:+9,literacy:+8,budget:-12000,workdays:-10}},
+      {text:'Implement a master data approach: deduplication rules in Collibra, search-before-create enforcement, golden record standard, and a quarterly borrower data quality review.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-20}}
     ],
     outcomes:[
       {text:'The script merges 82% of duplicates. But without preventing new ones, the duplicate rate creeps back to 6% within 3 months.',lesson:'One-time cleansing without prevention is a treadmill. You need both.'},
@@ -445,10 +445,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ Excess access creates both a <strong>regulatory exposure</strong> (GLBA Safeguards Rule requires access to be limited to those who need it) and an insider threat risk. One disgruntled employee with unrestricted access is a breach waiting to happen.`,
     collibra:`Collibra\'s Data Catalog can map which roles should have access to which classified data assets — creating a documented, defensible access matrix that InfoSec can enforce.`,
     choices:[
-      {text:'Send a memo reminding employees not to access data they don\'t need for their job.',effects:{dataQuality:+1,bizTrust:-2,literacy:+2,budget:-1000,workdays:-1}},
-      {text:'Ask IT to immediately revoke all access and require employees to re-request what they need.',effects:{dataQuality:+5,bizTrust:-8,literacy:+2,budget:-5000,workdays:-5}},
-      {text:'Define access tiers for the top 5 highest-risk data assets in Collibra and work with IT to enforce them.',effects:{dataQuality:+8,bizTrust:+6,literacy:+6,budget:-12000,workdays:-10}},
-      {text:'Build a role-based access control framework: classify all sensitive assets in Collibra, define access by job function, and implement a quarterly access review process.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-20000,workdays:-16}}
+      {text:'Send a company-wide reminder memo that employees should only access data their job requires.',effects:{dataQuality:+1,bizTrust:-2,literacy:+2,budget:-1000,workdays:-1}},
+      {text:'Have IT immediately revoke all database access and require every employee to submit a new access request.',effects:{dataQuality:+5,bizTrust:-8,literacy:+2,budget:-5000,workdays:-5}},
+      {text:'Define access tiers in Collibra for the five highest-risk data assets and work with IT to enforce them this quarter.',effects:{dataQuality:+8,bizTrust:+6,literacy:+6,budget:-12000,workdays:-10}},
+      {text:'Build a role-based access framework: classify all sensitive assets in Collibra, define access by job function, and run quarterly access reviews.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-20000,workdays:-16}}
     ],
     outcomes:[
       {text:'The memo is ignored. Access patterns don\'t change. Three months later, an InfoSec audit flags the same issue.',lesson:'Memos don\'t enforce access policies. Governance requires systems and accountability.'},
@@ -465,10 +465,10 @@ const SCENARIO_POOL = [
     impact:`📊 Last month, <strong>3,200 loan records had at least one data quality defect</strong> by the time they reached the data warehouse. Analysts spend an estimated 30% of their time cleaning data rather than analyzing it.`,
     collibra:`Collibra\'s Data Quality module supports automated rule creation, threshold alerting, and quality scorecards by domain — so you know the health of your data before it causes a business problem.`,
     choices:[
-      {text:'Continue manual reviews but hire an additional data quality analyst to keep up with volume.',effects:{dataQuality:+5,bizTrust:+3,literacy:+3,budget:-35000,workdays:-4}},
-      {text:'Build automated quality rules in the LOS for the 10 most common defect types.',effects:{dataQuality:+10,bizTrust:+8,literacy:+5,budget:-15000,workdays:-12}},
-      {text:'Implement Collibra\'s Data Quality module with rules, scorecards, and alerting for the loan origination domain.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-25000,workdays:-14}},
-      {text:'Build a comprehensive data quality program: automated rules in Collibra, LOS validation, domain scorecards, steward-owned remediation queues, and monthly quality reporting.',effects:{dataQuality:+18,bizTrust:+14,literacy:+12,budget:-32000,workdays:-22}}
+      {text:'Hire an additional data quality analyst to handle the growing volume of manual reviews each month.',effects:{dataQuality:+5,bizTrust:+3,literacy:+3,budget:-35000,workdays:-4}},
+      {text:'Build automated validation rules at the LOS entry point to catch the ten most common defect types before they enter downstream systems.',effects:{dataQuality:+10,bizTrust:+8,literacy:+5,budget:-15000,workdays:-12}},
+      {text:'Implement Collibra\'s Data Quality module with automated rules, domain scorecards, and alerting for the loan origination data domain.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-25000,workdays:-14}},
+      {text:'Launch a full quality program: Collibra scorecards, LOS validation, steward-owned remediation queues, and monthly quality reporting to business leadership.',effects:{dataQuality:+18,bizTrust:+14,literacy:+12,budget:-32000,workdays:-22}}
     ],
     outcomes:[
       {text:'The new analyst keeps up for 3 months, then falls behind as loan volume grows. The underlying problem is unchanged.',lesson:'Hiring to compensate for bad data governance is a treadmill. Automation is the only scalable solution.'},
@@ -485,10 +485,10 @@ const SCENARIO_POOL = [
     impact:`⏱️ <strong>340 loan applications are stalled</strong>. Processing delays are triggering borrower complaints and potentially violating rate lock commitments on time-sensitive loans.`,
     collibra:`Collibra\'s Data Catalog can document the data contract with each vendor — field definitions, expected formats, and change notification requirements — creating a governed interface specification.`,
     choices:[
-      {text:'Have IT emergency-patch the LOS integration immediately to use the new field names.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-8}},
-      {text:'Contact Equifax to request a rollback to the previous format while you plan the transition.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-3000,workdays:-4}},
-      {text:'Document the Equifax data contract in Collibra and update the LOS integration with proper field mapping and format validation.',effects:{dataQuality:+10,bizTrust:+8,literacy:+6,budget:-18000,workdays:-14}},
-      {text:'Fix the immediate issue, then implement a vendor data contract framework in Collibra for all third-party data providers with change notification SLAs.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-24000,workdays:-18}}
+      {text:'Contact Equifax to request a rollback to the previous API format while your team plans the transition.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-3000,workdays:-4}},
+      {text:'Have IT emergency-patch the LOS integration to map the new Equifax field names and unblock the 340 stalled applications.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-8}},
+      {text:'Document the Equifax data contract in Collibra with field definitions and format specs, then update the LOS integration properly.',effects:{dataQuality:+10,bizTrust:+8,literacy:+6,budget:-18000,workdays:-14}},
+      {text:'Fix the Equifax issue, then build a vendor data contract framework in Collibra for all third-party providers — with change notification SLAs.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-24000,workdays:-18}}
     ],
     outcomes:[
       {text:'The emergency patch works but was written in 4 hours under pressure. Two months later, a subtle field mapping error causes credit score miscalculations on 80 loans.',lesson:'Emergency patches under pressure accumulate technical debt. Fix it right when you have the chance.'},
@@ -505,10 +505,10 @@ const SCENARIO_POOL = [
     impact:`🏦 The board declines to act on the metric until it can be verified. Two strategic decisions about staffing and branch expansion are put on hold. <strong>Governance credibility is directly on the line.</strong>`,
     collibra:`Collibra\'s Data Catalog can document report lineage — what data feeds a report, what transformations occur, and who owns the metric definition — so any report can be explained by any team member at any time.`,
     choices:[
-      {text:'Apologize to the board and promise the metric will be verified before the next meeting.',effects:{dataQuality:+1,bizTrust:-8,literacy:+1,budget:-1000,workdays:-1}},
-      {text:'Reverse-engineer the dashboard and document the formula in a wiki for future reference.',effects:{dataQuality:+5,bizTrust:+4,literacy:+5,budget:-8000,workdays:-8}},
-      {text:'Document the metric definition and lineage in Collibra and establish a certification process for all board-level metrics.',effects:{dataQuality:+10,bizTrust:+12,literacy:+8,budget:-16000,workdays:-14}},
-      {text:'Build a governed metrics catalog: all board and executive metrics documented in Collibra with definition, owner, lineage, and recertification schedule.',effects:{dataQuality:+12,bizTrust:+16,literacy:+12,budget:-20000,workdays:-16}}
+      {text:'Apologize to the board and commit to verifying the metric before the next quarterly meeting.',effects:{dataQuality:+1,bizTrust:-8,literacy:+1,budget:-1000,workdays:-1}},
+      {text:'Reverse-engineer the dashboard, document the formula and data sources, and publish findings in an internal wiki.',effects:{dataQuality:+5,bizTrust:+4,literacy:+5,budget:-8000,workdays:-8}},
+      {text:'Document this metric\'s lineage and definition in Collibra and establish a certification process for all board-level metrics going forward.',effects:{dataQuality:+10,bizTrust:+12,literacy:+8,budget:-16000,workdays:-14}},
+      {text:'Build a governed metrics catalog in Collibra: all executive metrics documented with definition, owner, lineage, and a recertification schedule.',effects:{dataQuality:+12,bizTrust:+16,literacy:+12,budget:-20000,workdays:-16}}
     ],
     outcomes:[
       {text:'The board is unimpressed. "You promised this last quarter too." Trust continues to erode.',lesson:'Promises without systems don\'t rebuild trust. Governance builds the systems so the promises don\'t need to be made.'},
@@ -525,10 +525,10 @@ const SCENARIO_POOL = [
     impact:`📉 A governance program that the business doesn\'t trust <strong>won\'t be used, won\'t be maintained, and won\'t survive its next budget review.</strong> Without business buy-in, every governance initiative becomes a fight.`,
     collibra:`Collibra\'s self-service features — data discovery, business glossary search, certified report consumption — should be positioned as tools that help the business move faster, not slower.`,
     choices:[
-      {text:'Send a company-wide email clarifying that governance is not the data police.',effects:{dataQuality:0,bizTrust:+3,literacy:+2,budget:-1000,workdays:-1}},
-      {text:'Run a "Data Governance Day" workshop with the three skeptical department heads to show them how Collibra helps their teams.',effects:{dataQuality:+4,bizTrust:+8,literacy:+10,budget:-8000,workdays:-6}},
-      {text:'Redesign the governance request process to be self-service in Collibra and reduce approval steps from 5 to 2.',effects:{dataQuality:+6,bizTrust:+10,literacy:+8,budget:-14000,workdays:-10}},
-      {text:'Launch a Data Literacy program: role-specific training, business-facing Collibra guides, "Data Champions" in each department, and a quarterly governance value report.',effects:{dataQuality:+8,bizTrust:+16,literacy:+18,budget:-18000,workdays:-16}}
+      {text:'Send a company-wide email clarifying what governance actually does and why it helps business teams move faster.',effects:{dataQuality:0,bizTrust:+3,literacy:+2,budget:-1000,workdays:-1}},
+      {text:'Hold a working session with the three skeptical department heads to walk through Collibra\'s self-service features and address their specific complaints.',effects:{dataQuality:+4,bizTrust:+8,literacy:+10,budget:-8000,workdays:-6}},
+      {text:'Redesign the governance approval process in Collibra to be fully self-service, cutting approval steps from five to two.',effects:{dataQuality:+6,bizTrust:+10,literacy:+8,budget:-14000,workdays:-10}},
+      {text:'Launch a Data Literacy program: role-specific training, Collibra user guides, embedded Data Champions in each department, and a quarterly governance value report.',effects:{dataQuality:+8,bizTrust:+16,literacy:+18,budget:-18000,workdays:-16}}
     ],
     outcomes:[
       {text:'The email is dismissed as PR. Department heads continue routing around governance. The program\'s reputation worsens.',lesson:'Communication without change doesn\'t fix a trust deficit. Actions — especially ones that make people\'s jobs easier — build trust.'},
@@ -545,10 +545,10 @@ const SCENARIO_POOL = [
     impact:`💥 <strong>Every report, dashboard, and regulatory submission</strong> produced in the last 19 days may contain errors. Finance is asking if yesterday\'s executive report is reliable. Legal wants to know if any regulatory filings are affected.`,
     collibra:`Collibra\'s lineage documentation — if complete — can show exactly which downstream reports and systems consumed the corrupted data, focusing remediation effort on what actually matters.`,
     choices:[
-      {text:'Restore from the last good backup and reprocess 19 days of transactions.',effects:{dataQuality:+10,bizTrust:+6,literacy:+3,budget:-20000,workdays:-15}},
-      {text:'Identify and manually correct the 4,800 affected records using the batch job\'s error logs.',effects:{dataQuality:+8,bizTrust:+5,literacy:+4,budget:-14000,workdays:-18}},
-      {text:'Use Collibra lineage to identify all downstream impacts, prioritize by severity, and execute a targeted remediation in order of business risk.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
-      {text:'Use Collibra lineage to scope impact, restore clean data, reprocess downstream systems in dependency order, and conduct a post-incident governance review to prevent recurrence.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-20}}
+      {text:'Restore from the last clean backup and reprocess 19 days of transactions to reset all affected systems.',effects:{dataQuality:+10,bizTrust:+6,literacy:+3,budget:-20000,workdays:-15}},
+      {text:'Manually identify and correct the 4,800 affected records using the batch job\'s error logs.',effects:{dataQuality:+8,bizTrust:+5,literacy:+4,budget:-14000,workdays:-18}},
+      {text:'Use Collibra lineage to map all downstream systems, prioritize by severity, and run targeted remediation in order of business risk.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
+      {text:'Use Collibra lineage to scope impact, restore clean data, reprocess systems in dependency order, and conduct a post-incident review to prevent recurrence.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-20}}
     ],
     outcomes:[
       {text:'Restore works cleanly but takes 36 hours. All downstream systems are offline during the restoration window. Business operations are disrupted.',lesson:'Backups are essential. But without lineage to scope the impact, you can\'t know if the restore was enough.'},
@@ -565,10 +565,10 @@ const SCENARIO_POOL = [
     impact:`📋 A governance program that depends on one person is <strong>not a program — it\'s a person.</strong> Without formal structure, roles, and executive sponsorship, the program cannot survive leadership changes, reorganizations, or your own career progression.`,
     collibra:`Collibra\'s governance operating model features — steward assignments, workflow routing, escalation paths, and committee review processes — only deliver value when the human governance structure is formally established.`,
     choices:[
-      {text:'Continue as-is — the program is working well enough without formal structure.',effects:{dataQuality:-4,bizTrust:-5,literacy:-2,budget:0,workdays:0}},
-      {text:'Document the program\'s roles and responsibilities in a governance charter and circulate for sign-off.',effects:{dataQuality:+5,bizTrust:+6,literacy:+5,budget:-6000,workdays:-6}},
-      {text:'Establish a Data Governance Council: executive sponsor, department data owners, and a formal stewardship model documented in Collibra.',effects:{dataQuality:+10,bizTrust:+12,literacy:+10,budget:-12000,workdays:-12}},
-      {text:'Build a full governance operating model: council with executive sponsor, formal steward appointments in Collibra, documented escalation paths, quarterly reviews, and a governance maturity roadmap.',effects:{dataQuality:+14,bizTrust:+16,literacy:+14,budget:-16000,workdays:-14}}
+      {text:'Continue running the program on goodwill and personal effort — the results speak for themselves.',effects:{dataQuality:-4,bizTrust:-5,literacy:-2,budget:0,workdays:0}},
+      {text:'Draft a governance charter documenting roles, responsibilities, and escalation paths — and circulate it for department head sign-off.',effects:{dataQuality:+5,bizTrust:+6,literacy:+5,budget:-6000,workdays:-6}},
+      {text:'Establish a Data Governance Council with an executive sponsor, formally appointed data owners, and a documented stewardship model in Collibra.',effects:{dataQuality:+10,bizTrust:+12,literacy:+10,budget:-12000,workdays:-12}},
+      {text:'Build a full governance operating model: council, executive sponsor, steward appointments in Collibra, documented escalation paths, quarterly reviews, and a maturity roadmap.',effects:{dataQuality:+14,bizTrust:+16,literacy:+14,budget:-16000,workdays:-14}}
     ],
     outcomes:[
       {text:'Two months later, you get sick for a week. Six data quality issues queue up with no action. One results in a regulatory filing error.',lesson:'A governance program that cannot survive its leader\'s absence is not a sustainable program.'},
@@ -587,10 +587,10 @@ const SCENARIO_POOL = [
     impact:`💰 The loan sale generates <strong>$4.8M in premium income.</strong> If it doesn\'t close on time, Loan & Behold Mortgage Company forfeits a $1.2M break-up fee and damages a key investor relationship. Capital Markets leadership is demanding answers now.`,
     collibra:`Collibra\'s lineage documentation — if built — would show exactly where each field value originates and which system is authoritative. Without it, the team must manually trace 1,400 discrepancies across three systems.`,
     choices:[
-      {text:'Have each team manually reconcile their own discrepancies and report back by morning.',effects:{dataQuality:+4,bizTrust:-5,literacy:+2,budget:-8000,workdays:-12}},
-      {text:'Delay the sale 48 hours, use Collibra to map authoritative sources for each disputed field, and correct the tape.',effects:{dataQuality:+10,bizTrust:+6,literacy:+8,budget:-20000,workdays:-16}},
-      {text:'Negotiate with the investor: correct the 200 highest-value discrepancies now, escrow the rest, and close on schedule.',effects:{dataQuality:+6,bizTrust:+4,literacy:+4,budget:-15000,workdays:-10}},
-      {text:'Use Collibra to identify the authoritative system for each field, fix all 1,400 records at source, update the tape, and build a pre-sale data quality checklist so this never recurs.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-35000,workdays:-22}}
+      {text:'Have each team manually reconcile their own portion of the 1,400 discrepancies and report back by morning.',effects:{dataQuality:+4,bizTrust:-5,literacy:+2,budget:-8000,workdays:-12}},
+      {text:'Negotiate with the investor to correct the 200 highest-value discrepancies now, escrow the rest, and close on schedule.',effects:{dataQuality:+6,bizTrust:+4,literacy:+4,budget:-15000,workdays:-10}},
+      {text:'Request a 48-hour delay, use Collibra to map authoritative sources for each disputed field, and deliver a fully corrected tape.',effects:{dataQuality:+10,bizTrust:+6,literacy:+8,budget:-20000,workdays:-16}},
+      {text:'Use Collibra lineage to identify the authoritative system for each field, correct all 1,400 records at source, and build a pre-sale data quality checklist to prevent recurrence.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-35000,workdays:-22}}
     ],
     outcomes:[
       {text:'Each team fixes some discrepancies but creates new ones in the process. The investor finds 300 new errors in the morning. The sale is delayed 5 days and the premium is renegotiated downward.',lesson:'Siloed remediation without an authoritative source creates new errors while fixing old ones. Governance owns cross-system reconciliation.'},
@@ -608,10 +608,10 @@ const SCENARIO_POOL = [
     impact:`📉 Finance has already communicated the $146M forecast to the board. If production comes in at $112M, that\'s a <strong>$34M miss</strong> that will require an explanation. The CEO wants to know whose number to trust.`,
     collibra:`Collibra\'s Business Glossary can define "pipeline" with precision — stage criteria, inclusion rules, and system of record — and Collibra\'s report certification can designate a single authoritative pipeline report for executive use.`,
     choices:[
-      {text:'Ask Finance to reforecast based on the Production number since it\'s the most conservative.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-3000,workdays:-3}},
-      {text:'Facilitate a joint Sales-Operations-Finance session to agree on pipeline stage definitions and publish them in Collibra.',effects:{dataQuality:+10,bizTrust:+14,literacy:+10,budget:-14000,workdays:-14}},
-      {text:'Build a reconciliation dashboard showing all three numbers with stage-by-stage breakdowns.',effects:{dataQuality:+6,bizTrust:+6,literacy:+7,budget:-12000,workdays:-10}},
-      {text:'Define pipeline in Collibra, create a certified cross-system pipeline report with stage gates agreed by all three teams, and establish a weekly reconciliation cadence.',effects:{dataQuality:+14,bizTrust:+18,literacy:+12,budget:-18000,workdays:-16}}
+      {text:'Ask Finance to reforecast using Production\'s number since it reflects actual loans in underwriting.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-3000,workdays:-3}},
+      {text:'Build a reconciliation dashboard showing all three pipeline figures side-by-side with stage-by-stage breakdowns.',effects:{dataQuality:+6,bizTrust:+6,literacy:+7,budget:-12000,workdays:-10}},
+      {text:'Convene Sales, Operations, and Finance to agree on pipeline stage definitions and publish the agreed definition in Collibra.',effects:{dataQuality:+10,bizTrust:+14,literacy:+10,budget:-14000,workdays:-14}},
+      {text:'Define pipeline in Collibra with all three teams, certify a single cross-system report with agreed stage gates, and establish a weekly reconciliation cadence.',effects:{dataQuality:+14,bizTrust:+18,literacy:+12,budget:-18000,workdays:-16}}
     ],
     outcomes:[
       {text:'Production comes in at $118M. Finance must explain a $28M miss to the board. "We used the conservative number" is not well received.',lesson:'Picking the lowest number isn\'t governance — it\'s avoiding accountability. A governed definition eliminates the choice.'},
@@ -629,10 +629,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ The 23 ineligible loans represent <strong>$180K in unauthorized rate discounts</strong> that Loan & Behold Mortgage Company may need to recover. The regulatory risk of disparate treatment among employees could trigger a fair lending review if the pattern looks discriminatory.`,
     collibra:`Collibra can document the authoritative source for employee eligibility data (HR\'s HRIS) and the integration contract between HR and IT — making it clear who is responsible for keeping the LOS table current.`,
     choices:[
-      {text:'Have IT immediately sync the LOS eligibility table from the HRIS and notify the 23 affected employees.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
-      {text:'Ask HR to own and maintain the eligibility table going forward, removing IT from the process.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-4000,workdays:-4}},
+      {text:'Ask HR to take ownership of the eligibility table going forward, removing IT from the update process.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-4000,workdays:-4}},
+      {text:'Have IT immediately sync the eligibility table from the HRIS and notify the 23 affected employees of the discrepancy.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
       {text:'Build an automated real-time integration between the HRIS and the LOS eligibility table, with Collibra documenting the data contract and governance responsibility.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-22000,workdays:-14}},
-      {text:'Correct the 23 loans, build the HRIS-to-LOS integration, document the data steward (HR) and integration owner (IT) in Collibra, and add monthly eligibility reconciliation to the governance calendar.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-18}}
+      {text:'Correct all 23 loans, automate the HRIS-to-LOS integration, document data steward and integration owner in Collibra, and add monthly eligibility reconciliation to the governance calendar.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-28000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT syncs the table. But without a formal integration, the next HR system update 6 months later again fails to propagate. The same issue recurs.',lesson:'Manual syncs are not governance. The integration and ownership must be documented and automated to prevent recurrence.'},
@@ -650,10 +650,10 @@ const SCENARIO_POOL = [
     impact:`🏦 Escrow account discrepancies create <strong>regulatory exposure under RESPA</strong>, which requires lenders to maintain accurate escrow balances and provide annual statements. Finance cannot certify the balance sheet until this is resolved. The external auditors have flagged it as a material weakness.`,
     collibra:`Collibra\'s Data Lineage module can map the exact data flow between the escrow management system and the general ledger — identifying exactly where the timing difference occurs and which system\'s balance is authoritative at each point in the posting cycle.`,
     choices:[
-      {text:'Continue monthly manual reconciliation but add a second reviewer to catch errors faster.',effects:{dataQuality:+2,bizTrust:-3,literacy:+1,budget:-12000,workdays:-8}},
-      {text:'Ask IT to investigate the timing difference and patch the posting logic.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-10000,workdays:-10}},
-      {text:'Use Collibra to document the escrow data flow, identify the authoritative balance at each stage, and design a reconciliation rule that Finance and Servicing both accept.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
-      {text:'Map escrow lineage in Collibra, fix the posting timing with IT, establish Finance as the system of record for final balances, create automated daily reconciliation alerts, and close the audit finding.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-26000,workdays:-18}}
+      {text:'Add a second reviewer to the monthly manual reconciliation process to catch errors faster.',effects:{dataQuality:+2,bizTrust:-3,literacy:+1,budget:-12000,workdays:-8}},
+      {text:'Ask IT to investigate the timing difference and patch the posting logic between the two systems.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-10000,workdays:-10}},
+      {text:'Use Collibra to map the escrow data flow, identify the authoritative balance at each posting stage, and build a reconciliation rule both teams accept.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
+      {text:'Map escrow lineage in Collibra, fix the posting timing with IT, designate Finance as system of record for final balances, and implement automated daily reconciliation alerts.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-26000,workdays:-18}}
     ],
     outcomes:[
       {text:'Manual reconciliation with two reviewers costs more and still doesn\'t find the root cause. Auditors note the control is labor-intensive and fragile.',lesson:'Manual controls compensate for governance gaps — they don\'t close them. Auditors can tell the difference.'},
@@ -671,10 +671,10 @@ const SCENARIO_POOL = [
     impact:`⚖️ The last three quarterly fair lending reports have been based on data showing <strong>40% of applications as "unknown" demographic</strong> — when the actual unknown rate is under 5%. The CFPB examiner arriving next month will see this immediately.`,
     collibra:`Collibra\'s Data Lineage module can document exactly which data sources feed the fair lending model, flag the LOS upgrade as a lineage-breaking event, and surface the field mapping mismatch before it reaches the regulator.`,
     choices:[
-      {text:'Ask IT to update the field mapping in the fair lending model before the examination.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
-      {text:'Rerun the last three quarterly analyses with corrected data and file amended reports with the CFPB proactively.',effects:{dataQuality:+8,bizTrust:+8,literacy:+4,budget:-20000,workdays:-14}},
-      {text:'Use Collibra to document the full fair lending data lineage, fix the field mapping, rerun analyses, and file amendments — then build a governance process requiring lineage review before any LOS change.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-30000,workdays:-20}},
-      {text:'Fix the field mapping, rerun corrected analyses, proactively disclose to the CFPB with a root cause explanation, and implement a pre-change governance checklist for all system upgrades.',effects:{dataQuality:+14,bizTrust:+16,literacy:+12,budget:-28000,workdays:-18}}
+      {text:'Ask IT to update the field mapping in the fair lending model before the CFPB examination arrives.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
+      {text:'Rerun the last three quarterly analyses with corrected data and proactively file amended reports with the CFPB.',effects:{dataQuality:+8,bizTrust:+8,literacy:+4,budget:-20000,workdays:-14}},
+      {text:'Fix the field mapping, rerun corrected analyses, proactively disclose the error to the CFPB, and implement a governance checklist for all future LOS upgrades.',effects:{dataQuality:+14,bizTrust:+16,literacy:+12,budget:-28000,workdays:-18}},
+      {text:'Use Collibra to document the full fair lending data lineage, fix the mapping, rerun analyses, file amendments, and require lineage review before any future system upgrade.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-30000,workdays:-20}}
     ],
     outcomes:[
       {text:'IT fixes the mapping. But the CFPB examiner arrives and immediately asks why the last three quarters show 40% unknown demographics. The fix is live but the historical reports are still wrong.',lesson:'Fixing the source doesn\'t fix the history. Regulatory reports already submitted with bad data require proactive disclosure and amendment.'},
@@ -692,10 +692,10 @@ const SCENARIO_POOL = [
     impact:`📋 The investor\'s legal team has sent a formal inquiry requesting field-level documentation within <strong>30 days</strong>, citing the PSA (Pooling and Servicing Agreement). Failure to provide documentation could constitute a material breach of the securitization agreement.`,
     collibra:`Collibra\'s Business Glossary and Data Catalog can house definitions for every field in the remittance report — once someone defines them. This is a reverse-engineering exercise that produces a governance artifact with permanent value.`,
     choices:[
-      {text:'Ask IT to search the codebase for how the 14 fields are calculated and document the formulas.',effects:{dataQuality:+5,bizTrust:+4,literacy:+4,budget:-8000,workdays:-8}},
-      {text:'Hire a consultant with MBS expertise to define the fields and create the documentation package.',effects:{dataQuality:+7,bizTrust:+6,literacy:+3,budget:-35000,workdays:-6}},
-      {text:'Convene IT, Finance, and Capital Markets in a sprint to reverse-engineer all 14 field definitions, document them in Collibra, and deliver the investor package.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-20000,workdays:-18}},
-      {text:'Sprint to define and document all 14 fields in Collibra, deliver the investor package, then implement a field-level documentation requirement for all future MBS reporting changes.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-24000,workdays:-20}}
+      {text:'Ask IT to search the codebase for how the 14 fields are calculated and document the formulas in a technical spec.',effects:{dataQuality:+5,bizTrust:+4,literacy:+4,budget:-8000,workdays:-8}},
+      {text:'Hire a consultant with MBS reporting expertise to reverse-engineer the fields and prepare the investor documentation package.',effects:{dataQuality:+7,bizTrust:+6,literacy:+3,budget:-35000,workdays:-6}},
+      {text:'Convene IT, Finance, and Capital Markets in a documentation sprint to define all 14 fields in Collibra and deliver the investor package.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-20000,workdays:-18}},
+      {text:'Sprint to define all 14 fields in Collibra, deliver the investor package, and establish a policy requiring Collibra documentation before any new MBS field goes to production.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-24000,workdays:-20}}
     ],
     outcomes:[
       {text:'IT finds the formulas in the code. They\'re technically accurate but written in notation only developers understand. The investor\'s legal team rejects the documentation as insufficient.',lesson:'Technical documentation of data fields is not the same as business documentation. Governance owns the translation.'},
@@ -713,10 +713,10 @@ const SCENARIO_POOL = [
     impact:`💸 The $280K overpayment creates an <strong>HR, Finance, and Compliance crisis simultaneously</strong>. Sales leadership is furious. HR must notify 45 loan officers that their next paycheck will be smaller. And Compliance must assess whether the commission timing creates a RESPA incentive compensation violation.`,
     collibra:`Collibra\'s Business Glossary needs a single, agreed definition of "closed loan" that HR, Sales, Finance, and Compliance all accept — linked to the authoritative system (the LOS funding date) and enforced in payroll processing.`,
     choices:[
-      {text:'Ask IT to change the CRM\'s "closed" flag to only trigger on loan funding.',effects:{dataQuality:+5,bizTrust:+3,literacy:+2,budget:-6000,workdays:-5}},
-      {text:'Claw back all $280K immediately and restart commission calculations from scratch.',effects:{dataQuality:+3,bizTrust:-10,literacy:+1,budget:+15000,workdays:-8}},
-      {text:'Convene HR, Sales, Finance, and Compliance to agree on the definition of "closed loan" for compensation purposes, document it in Collibra, and fix the CRM trigger going forward.',effects:{dataQuality:+10,bizTrust:+8,literacy:+10,budget:-14000,workdays:-12}},
-      {text:'Define "closed loan" in Collibra with all four teams, fix the CRM trigger, work with HR and Finance to design a fair clawback plan, brief Compliance on the RESPA implications, and implement monthly commission reconciliation.',effects:{dataQuality:+14,bizTrust:+12,literacy:+12,budget:-20000,workdays:-16}}
+      {text:'Ask IT to change the CRM\'s "closed" flag to trigger only when a loan actually funds in the LOS.',effects:{dataQuality:+5,bizTrust:+3,literacy:+2,budget:-6000,workdays:-5}},
+      {text:'Claw back all $280K in overpaid commissions immediately and recalculate from the correct loan funding date.',effects:{dataQuality:+3,bizTrust:-10,literacy:+1,budget:+15000,workdays:-8}},
+      {text:'Convene HR, Sales, Finance, and Compliance to agree on the definition of "closed loan," document it in Collibra, and fix the CRM trigger going forward.',effects:{dataQuality:+10,bizTrust:+8,literacy:+10,budget:-14000,workdays:-12}},
+      {text:'Agree on the definition in Collibra with all four teams, fix the CRM trigger, design a fair clawback plan with HR, brief Compliance on the RESPA implications, and run monthly commission reconciliation.',effects:{dataQuality:+14,bizTrust:+12,literacy:+12,budget:-20000,workdays:-16}}
     ],
     outcomes:[
       {text:'IT changes the flag. Future commissions are correct. But the 45 loan officers are notified of clawbacks without any context or plan. Several resign. Sales leadership escalates to the CEO.',lesson:'Technical fixes without people and process fixes create HR crises. Data governance solutions must account for the human impact of corrections.'},
@@ -734,10 +734,10 @@ const SCENARIO_POOL = [
     impact:`📋 Investor reporting errors can constitute <strong>securities fraud if material and intentional</strong>. Even if unintentional, a 1.5% delinquency discrepancy on a $400M portfolio is a $6M difference that requires a formal response and likely a restatement.`,
     collibra:`Collibra\'s Business Glossary must establish a single definition of "delinquent loan" for investor reporting purposes — aligned with the PSA definition in the securitization documents — and Collibra\'s lineage must trace every delinquency calculation back to its source.`,
     choices:[
-      {text:'Ask Servicing to re-run the calculation and send a corrected report to the investor.',effects:{dataQuality:+4,bizTrust:+2,literacy:+2,budget:-5000,workdays:-5}},
-      {text:'Engage outside counsel to respond to the investor while governance investigates the calculation difference.',effects:{dataQuality:+3,bizTrust:+5,literacy:+2,budget:-40000,workdays:-8}},
-      {text:'Use Collibra to trace the delinquency calculation lineage, identify where the 1.5% gap originates, and deliver a root cause analysis to the investor alongside a corrected report.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-22000,workdays:-16}},
-      {text:'Lineage investigation, corrected report, investor meeting with root cause analysis, REG AB self-assessment, and a new investor reporting governance process with Compliance sign-off before each submission.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-32000,workdays:-20}}
+      {text:'Ask Servicing to re-run the delinquency calculation and send a corrected report to the investor.',effects:{dataQuality:+4,bizTrust:+2,literacy:+2,budget:-5000,workdays:-5}},
+      {text:'Engage outside counsel to respond to the investor\'s letter while governance investigates the calculation difference.',effects:{dataQuality:+3,bizTrust:+5,literacy:+2,budget:-40000,workdays:-8}},
+      {text:'Use Collibra lineage to trace the delinquency calculation, identify where the 1.5% gap originates, and deliver a root cause analysis alongside a corrected report.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-22000,workdays:-16}},
+      {text:'Conduct a lineage investigation, deliver a corrected report with root cause analysis, file a REG AB self-assessment, and establish a Compliance sign-off process for all future investor submissions.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-32000,workdays:-20}}
     ],
     outcomes:[
       {text:'Servicing re-runs and sends a "corrected" report. But it\'s 4.1% — still different from the investor\'s 4.7%. The investor sends a second letter. Trust deteriorates further.',lesson:'Re-running without understanding the root cause produces different wrong answers. Governance must trace the source before re-running anything.'},
@@ -755,10 +755,10 @@ const SCENARIO_POOL = [
     impact:`🖥️ The migration is <strong>8 weeks from go-live</strong>. Every Collibra catalog entry, lineage document, data quality rule, and business glossary term that references the old LOS field names will break on day one. Compliance\'s HMDA reporting, Finance\'s GL integration, and Capital Markets\' loan tape will all be affected.`,
     collibra:`Collibra\'s impact analysis feature — when the catalog is current — can show every downstream asset, report, and system that references a field before it\'s changed. Without it, the team must manually trace every dependency.`,
     choices:[
-      {text:'Request a 4-week delay to complete a governance impact assessment before go-live.',effects:{dataQuality:+6,bizTrust:+5,literacy:+5,budget:-15000,workdays:-14}},
-      {text:'Embed a data governance resource in the migration project team for the remaining 8 weeks.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-18000,workdays:-16}},
-      {text:'Run a parallel Collibra impact assessment of all 340 renamed fields, update Collibra, and brief Compliance and Finance on what will break and when.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-20000,workdays:-18}},
-      {text:'Join the migration steering committee, run a full Collibra impact assessment, update all catalog entries and lineage before go-live, and establish a formal governance gate for all future system changes.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-26000,workdays:-20}}
+      {text:'Request a four-week delay to complete a governance impact assessment before the migration goes live.',effects:{dataQuality:+6,bizTrust:+5,literacy:+5,budget:-15000,workdays:-14}},
+      {text:'Embed a data governance resource directly in the migration project team for the remaining eight weeks.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-18000,workdays:-16}},
+      {text:'Run a Collibra impact assessment of all 340 renamed fields and brief Compliance and Finance on what will break at go-live.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-20000,workdays:-18}},
+      {text:'Join the migration steering committee, run a full Collibra impact assessment, update all catalog entries before go-live, and establish a governance gate for all future system changes.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-26000,workdays:-20}}
     ],
     outcomes:[
       {text:'The delay buys time but creates resentment in IT. The impact assessment is completed but governance is now seen as a blocker rather than a partner.',lesson:'Governance delays are politically costly. The better play is to get a seat at the table early — not to show up and stop the train.'},
@@ -776,10 +776,10 @@ const SCENARIO_POOL = [
     impact:`📊 Loan & Behold Mortgage Company cannot file its <strong>monthly bank regulatory report</strong> until the GL balances. The regulatory deadline is in 48 hours. External auditors have been notified and are asking for a root cause explanation.`,
     collibra:`Collibra can document the authoritative sources and posting logic for each GL account — turning a manual investigation into a governed, repeatable reconciliation process that Finance, Servicing, and HR all understand.`,
     choices:[
-      {text:'Have each department\'s accountant manually trace their entries until the variance is found.',effects:{dataQuality:+4,bizTrust:-2,literacy:+2,budget:-8000,workdays:-14}},
-      {text:'Bring in an external accounting firm to perform an emergency reconciliation.',effects:{dataQuality:+5,bizTrust:+3,literacy:+1,budget:-45000,workdays:-5}},
-      {text:'Use Collibra to map the posting flows for all three account types, identify the timing differences causing the variance, and correct the entries.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-16}},
-      {text:'Resolve the immediate variance using Collibra lineage, document all three account flows in Collibra with Finance as steward, and implement automated daily GL reconciliation alerts going forward.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-18}}
+      {text:'Have each department\'s accountant manually trace their entries until the $1.4M variance is identified.',effects:{dataQuality:+4,bizTrust:-2,literacy:+2,budget:-8000,workdays:-14}},
+      {text:'Bring in an external accounting firm to perform an emergency reconciliation before the regulatory deadline.',effects:{dataQuality:+5,bizTrust:+3,literacy:+1,budget:-45000,workdays:-5}},
+      {text:'Use Collibra to map posting flows for all three account types, identify the timing differences, and correct the entries before the 48-hour deadline.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-16}},
+      {text:'Resolve the variance using Collibra lineage, document all three account flows with Finance as steward, and implement automated daily GL reconciliation alerts going forward.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-18}}
     ],
     outcomes:[
       {text:'Manual trace takes 40 hours. The variance is found — an HR payroll accrual posted twice due to a system error. Filed with 4 hours to spare. Auditors note the fragility of the manual process.',lesson:'Manual reconciliation that barely meets regulatory deadlines is not a sustainable control. Auditors see it for what it is.'},
@@ -797,10 +797,10 @@ const SCENARIO_POOL = [
     impact:`⚖️ Free-text fields containing demographic information create <strong>fair lending and ECOA liability</strong>. If underwriters can see these notes during the decision process, Loan & Behold Mortgage Company may have a systemic discrimination problem. If they can\'t, the data is being collected without purpose — also a compliance issue.`,
     collibra:`Collibra\'s Data Classification module needs to tag this field as Restricted — containing sensitive demographic data — and the Data Steward for the CRM must document the field\'s purpose, access controls, and retention policy.`,
     choices:[
-      {text:'Ask IT to immediately disable the free-text field and delete its contents.',effects:{dataQuality:+2,bizTrust:-4,literacy:+1,budget:-5000,workdays:-4}},
-      {text:'Have Compliance review a sample of the 180,000 entries to assess the fair lending risk.',effects:{dataQuality:+4,bizTrust:+4,literacy:+4,budget:-15000,workdays:-12}},
-      {text:'Classify the field as Restricted in Collibra, restrict access to Compliance only, conduct a full fair lending review of the entries, and implement a purpose-limitation policy.',effects:{dataQuality:+10,bizTrust:+8,literacy:+10,budget:-22000,workdays:-16}},
-      {text:'Classify and restrict the field, conduct a fair lending review with outside counsel, implement a notes policy with approved language, train all loan officers, and document the remediation in the regulatory file.',effects:{dataQuality:+14,bizTrust:+12,literacy:+14,budget:-32000,workdays:-20}}
+      {text:'Ask IT to immediately disable the free-text notes field and delete its 180,000 entries.',effects:{dataQuality:+2,bizTrust:-4,literacy:+1,budget:-5000,workdays:-4}},
+      {text:'Have Compliance review a statistically valid sample of the 180,000 entries to assess the fair lending exposure.',effects:{dataQuality:+4,bizTrust:+4,literacy:+4,budget:-15000,workdays:-12}},
+      {text:'Classify the field as Restricted in Collibra, restrict access to Compliance only, conduct a full fair lending review, and implement a written notes policy with approved language.',effects:{dataQuality:+10,bizTrust:+8,literacy:+10,budget:-22000,workdays:-16}},
+      {text:'Classify and restrict the field in Collibra, conduct a fair lending review with outside counsel, train all loan officers on the new notes policy, and document the remediation in the regulatory file.',effects:{dataQuality:+14,bizTrust:+12,literacy:+14,budget:-32000,workdays:-20}}
     ],
     outcomes:[
       {text:'IT deletes the field contents. But Compliance now has no ability to review whether past underwriting decisions were influenced by the notes. The deletion destroys potential evidence.',lesson:'Deleting data under regulatory investigation can be worse than having the data. Governance must pause before deleting anything under compliance review.'},
@@ -818,10 +818,10 @@ const SCENARIO_POOL = [
     impact:`🏦 <strong>180 borrowers are not being contacted for their first payment</strong>. If not resolved within 30 days, Loan & Behold Mortgage Company faces delinquency reporting obligations on loans it considers performing. Finance cannot reconcile its funded loan asset balance.`,
     collibra:`Collibra\'s Data Lineage module can document the loan boarding workflow — exactly what data must transfer, in what format, through which integration — creating a governance checkpoint between origination and servicing.`,
     choices:[
-      {text:'Ask IT to manually board the 180 loans into the servicing system immediately.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-8000,workdays:-8}},
-      {text:'Investigate why the IT interface shows success but Servicing has no records.',effects:{dataQuality:+7,bizTrust:+5,literacy:+4,budget:-10000,workdays:-10}},
-      {text:'Use Collibra to map the boarding data flow, identify exactly where the 180 loans dropped out, fix the integration, and document the authoritative boarding checklist.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
-      {text:'Board the 180 loans, map and fix the integration in Collibra, implement a daily loan-count reconciliation between LOS and servicing, and add boarding quality as a Collibra data quality metric.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-18}}
+      {text:'Ask IT to manually board the 180 missing loans into the servicing system to unblock payment collection.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-8000,workdays:-8}},
+      {text:'Investigate why the boarding interface reports success but Servicing has no records — find the semantic gap before touching the loans.',effects:{dataQuality:+7,bizTrust:+5,literacy:+4,budget:-10000,workdays:-10}},
+      {text:'Use Collibra to map the boarding data flow, find exactly where the 180 loans dropped out, fix the integration, and document the authoritative boarding checklist.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
+      {text:'Board the 180 loans, fix and document the integration in Collibra, implement daily LOS-to-servicing loan count reconciliation, and add boarding quality as a tracked data quality metric.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT manually boards the loans. But 3 more loans drop out in the next boarding cycle. The underlying problem is unresolved.',lesson:'Manual fixes without root cause analysis are a treadmill. The same loans will keep dropping.'},
@@ -839,10 +839,10 @@ const SCENARIO_POOL = [
     impact:`📊 Branch managers are making <strong>staffing and coaching decisions based on wrong production data</strong>. Two loan officers who transferred have no manager in the system and have received no coaching. One has already left the company citing lack of support.`,
     collibra:`Collibra can document the HR data flow from the HRIS to the production reporting system, assign a steward for workforce data, and create a quality rule that alerts when the workforce database hasn\'t been refreshed within 48 hours.`,
     choices:[
-      {text:'Ask IT to rerun the failed refresh job immediately and monitor it daily.',effects:{dataQuality:+5,bizTrust:+3,literacy:+2,budget:-4000,workdays:-4}},
-      {text:'Move branch manager reports to read directly from the HRIS, eliminating the intermediate database.',effects:{dataQuality:+8,bizTrust:+6,literacy:+4,budget:-12000,workdays:-10}},
-      {text:'Fix the refresh job, assign HR as data steward for workforce data in Collibra, and add a data freshness quality rule that alerts IT when the refresh fails.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-14000,workdays:-12}},
-      {text:'Fix the refresh, document HR-to-reporting lineage in Collibra, assign stewards, implement automated freshness monitoring, and build a standard onboarding/transfer data quality checklist for HR and IT.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-20000,workdays:-16}}
+      {text:'Ask IT to rerun the failed refresh job immediately and have someone monitor it manually each day.',effects:{dataQuality:+5,bizTrust:+3,literacy:+2,budget:-4000,workdays:-4}},
+      {text:'Reroute branch manager reports to pull directly from the HRIS, eliminating the intermediate database entirely.',effects:{dataQuality:+8,bizTrust:+6,literacy:+4,budget:-12000,workdays:-10}},
+      {text:'Fix the refresh job, assign HR as data steward for workforce data in Collibra, and add a freshness quality rule alerting IT when the refresh fails.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-14000,workdays:-12}},
+      {text:'Fix the refresh, document HR-to-reporting lineage in Collibra with steward assignments, implement automated freshness monitoring, and build a standard transfer checklist for all HR data handoffs.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-20000,workdays:-16}}
     ],
     outcomes:[
       {text:'IT reruns the job. But it fails again 3 weeks later. Silent failure with no monitoring means it won\'t be caught for weeks again.',lesson:'Fixing a failed job without adding monitoring is fixing the symptom. The absence of an alert is the real governance failure.'},
@@ -860,10 +860,10 @@ const SCENARIO_POOL = [
     impact:`💰 The sale generates <strong>$3.2M in premium income</strong> and is earmarked for Q4 capital targets. Missing compliance data will delay the close and may cause the buyer to reprice — reducing the premium by an estimated $400K-$800K per week of delay.`,
     collibra:`Collibra\'s Data Catalog should house CRA coding data, HMDA outputs, and vendor compliance certifications as governed, linked assets — not on individual desktops or in vendor portals nobody has access to.`,
     choices:[
-      {text:'Ask the analyst to export the CRA spreadsheet and contact the vendor for the certification file.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-5000,workdays:-5}},
-      {text:'Delay the sale one week to load all compliance data into a centralized system.',effects:{dataQuality:+7,bizTrust:+4,literacy:+4,budget:-15000,workdays:-8}},
-      {text:'Assemble the compliance package from all available sources, deliver to the buyer, and simultaneously catalog all three data sources in Collibra so this never delays a future sale.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
-      {text:'Close on schedule by assembling the package, catalog all compliance data sources in Collibra with ownership assigned, and build a pre-sale compliance data readiness checklist for all future sales.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-16}}
+      {text:'Ask the analyst to export the CRA spreadsheet and chase the vendor for the anti-predatory lending certification file.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-5000,workdays:-5}},
+      {text:'Delay the sale one week, load all compliance data into a centralized location, then deliver a complete package to the buyer.',effects:{dataQuality:+7,bizTrust:+4,literacy:+4,budget:-15000,workdays:-8}},
+      {text:'Assemble the compliance package from all available sources, close on schedule, and catalog all three compliance data sources in Collibra immediately after.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-18000,workdays:-14}},
+      {text:'Close on schedule with the assembled package, catalog all compliance data in Collibra with named owners, and build a pre-sale compliance readiness checklist for all future loan sales.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-24000,workdays:-16}}
     ],
     outcomes:[
       {text:'Analyst exports the spreadsheet. Vendor portal access has expired. Capital Markets spends 3 days getting new credentials. Sale closes 4 days late. Premium is repriced down $600K.',lesson:'Single points of failure in compliance data — one analyst, one expired portal — are governance risks. Data must be owned by a role, not a person.'},
@@ -881,10 +881,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ <strong>62 borrowers received incorrect late notices</strong> — a RESPA violation. Each incorrect notice requires a written correction. If any borrower has a credit score impacted, Loan & Behold Mortgage Company faces FCRA liability. Compliance estimates the regulatory exposure at $3,000-$8,000 per affected borrower.`,
     collibra:`Collibra\'s Data Quality module can define a validation rule for routing number format — ensuring leading zeros are preserved across all systems — and document the authoritative format standard so future IT changes are checked against it.`,
     choices:[
-      {text:'Ask IT to restore the routing number format and reprocess the 62 payments.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
-      {text:'Reprocess the payments, send correction notices to all 62 borrowers, and notify Compliance.',effects:{dataQuality:+8,bizTrust:+6,literacy:+3,budget:-15000,workdays:-10}},
-      {text:'Fix the format, reprocess payments, notify all 62 borrowers, create a Collibra data quality rule for routing number format, and add it to the pre-change checklist for all future IT updates.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-22000,workdays:-14}},
-      {text:'Fix, reprocess, notify borrowers, file voluntary RESPA self-disclosure, check all 62 credit reports and correct any impacts, add the quality rule to Collibra, and brief IT on the change management process.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-30000,workdays:-18}}
+      {text:'Ask IT to restore the routing number format and reprocess the 62 misapplied payments.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-8000,workdays:-6}},
+      {text:'Reprocess all 62 payments, send correction notices to affected borrowers, and formally notify Compliance of the RESPA exposure.',effects:{dataQuality:+8,bizTrust:+6,literacy:+3,budget:-15000,workdays:-10}},
+      {text:'Fix the format, reprocess payments, notify borrowers, add a Collibra quality rule for routing number format, and include it in the pre-change checklist for future IT updates.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-22000,workdays:-14}},
+      {text:'Fix and reprocess, notify borrowers, file a voluntary RESPA self-disclosure, audit all 62 credit reports for impact, add the quality rule to Collibra, and brief IT on the change management gap.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-30000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT restores the format and reprocesses. But Compliance asks: "Did we send late notices?" Yes. "Did we send corrections?" No. The regulatory exposure is unaddressed.',lesson:'Fixing the data without addressing the downstream impact on borrowers and regulators is an incomplete governance response.'},
@@ -902,10 +902,10 @@ const SCENARIO_POOL = [
     impact:`📊 Hedge accounting discrepancies must be disclosed in financial statements. The external auditors have requested the <span class="hl">valuation methodology documentation</span> and are questioning whether Loan & Behold Mortgage Company\'s hedge accounting qualifies for the preferred treatment under ASC 815 — which, if denied, adds <strong>$1.8M in income statement volatility</strong>.`,
     collibra:`Collibra\'s Business Glossary can define the authoritative valuation methodology — which model, which data source, which frequency — and Collibra\'s lineage can trace every mark-to-market input to its source, making the audit trail complete.`,
     choices:[
-      {text:'Ask the CFO to decide which model is authoritative and document the decision.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-4000,workdays:-3}},
-      {text:'Engage the external auditors early to agree on the methodology before the quarterly close.',effects:{dataQuality:+6,bizTrust:+6,literacy:+4,budget:-20000,workdays:-6}},
-      {text:'Use Collibra to document both valuation methodologies, identify the differences, and facilitate a Finance-Capital Markets agreement on the authoritative approach.',effects:{dataQuality:+10,bizTrust:+10,literacy:+8,budget:-16000,workdays:-12}},
-      {text:'Facilitate the Finance-Capital Markets agreement, document in Collibra with complete lineage from market data to valuation to financial statements, and deliver a methodology package to the auditors.',effects:{dataQuality:+14,bizTrust:+14,literacy:+10,budget:-22000,workdays:-14}}
+      {text:'Ask the CFO to decide which valuation model is authoritative and document that decision in writing.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-4000,workdays:-3}},
+      {text:'Bring in the external auditors early to agree on the methodology before the quarterly close.',effects:{dataQuality:+6,bizTrust:+6,literacy:+4,budget:-20000,workdays:-6}},
+      {text:'Use Collibra to document both valuation methodologies, identify the differences, and facilitate a Finance-Capital Markets agreement on a single authoritative approach.',effects:{dataQuality:+10,bizTrust:+10,literacy:+8,budget:-16000,workdays:-12}},
+      {text:'Facilitate Finance-Capital Markets agreement on the methodology, document it in Collibra with complete lineage from market data to financial statements, and deliver the full package to the auditors.',effects:{dataQuality:+14,bizTrust:+14,literacy:+10,budget:-22000,workdays:-14}}
     ],
     outcomes:[
       {text:'CFO decides Finance\'s model is authoritative. Capital Markets disagrees and continues running their own. The disagreements continue. Auditors find the documentation insufficient.',lesson:'Executive decisions without cross-functional buy-in don\'t change behavior. Governance must facilitate agreement, not just document the outcome of a mandate.'},
@@ -923,10 +923,10 @@ const SCENARIO_POOL = [
     impact:`👥 Four new loan officers have resigned in the last 90 days, citing <strong>"unclear expectations" in exit interviews</strong>. HR estimates replacement cost at $18K per officer. The Sales team\'s new hire pipeline efficiency is 30% below target.`,
     collibra:`Collibra\'s Business Glossary — if populated with these production metric definitions — can be embedded into the onboarding program and into the performance dashboards themselves, so every loan officer sees the definition of any metric they\'re being evaluated on.`,
     choices:[
-      {text:'Ask Production Operations to add a definitions glossary to the performance dashboard.',effects:{dataQuality:+3,bizTrust:+4,literacy:+5,budget:-5000,workdays:-4}},
-      {text:'Redesign the onboarding program to include a data literacy module on all 12 metrics.',effects:{dataQuality:+6,bizTrust:+8,literacy:+14,budget:-12000,workdays:-10}},
-      {text:'Define all 12 metrics in Collibra, embed tooltips in the performance dashboard, and update the onboarding curriculum with scenario-based metric training.',effects:{dataQuality:+10,bizTrust:+12,literacy:+16,budget:-16000,workdays:-14}},
-      {text:'Define metrics in Collibra, embed in dashboard, redesign onboarding with literacy module, and establish a "metric certification" requirement before loan officers can be placed on a PIP.',effects:{dataQuality:+12,bizTrust:+14,literacy:+18,budget:-20000,workdays:-16}}
+      {text:'Ask Production Operations to add a metric definitions glossary as a downloadable PDF link in the performance dashboard.',effects:{dataQuality:+3,bizTrust:+4,literacy:+5,budget:-5000,workdays:-4}},
+      {text:'Redesign the onboarding program to include a dedicated data literacy module covering all 12 performance metrics.',effects:{dataQuality:+6,bizTrust:+8,literacy:+14,budget:-12000,workdays:-10}},
+      {text:'Define all 12 metrics in Collibra, embed tooltip definitions in the performance dashboard, and update onboarding with scenario-based metric training.',effects:{dataQuality:+10,bizTrust:+12,literacy:+16,budget:-16000,workdays:-14}},
+      {text:'Define metrics in Collibra, embed them in the dashboard, redesign onboarding with a literacy module, and require metric certification before any loan officer can be placed on a PIP.',effects:{dataQuality:+12,bizTrust:+14,literacy:+18,budget:-20000,workdays:-16}}
     ],
     outcomes:[
       {text:'A definitions glossary is added to the dashboard as a PDF link. Loan officers rarely open it. New hire retention improves marginally.',lesson:'Documentation that isn\'t embedded in the workflow doesn\'t get used. Governance must meet people where they work.'},
@@ -944,10 +944,10 @@ const SCENARIO_POOL = [
     impact:`📉 <strong>Capital Markets analysts spend 35% of their time</strong> finding and validating data before they can analyze it. Servicing\'s investor reports have contained inconsistencies traced back to different analysts using different versions of the same data. The data lake is consuming $180K/year in infrastructure costs for data nobody trusts.`,
     collibra:`Collibra\'s Data Catalog is exactly the governance layer a data lake needs — cataloging all 4,200 tables, identifying duplicates, certifying authoritative versions, and giving every analyst a single place to find trusted data.`,
     choices:[
-      {text:'Ask IT to archive all tables not accessed in the last 6 months.',effects:{dataQuality:+3,bizTrust:+2,literacy:+2,budget:+20000,workdays:-6}},
-      {text:'Have Capital Markets and Servicing identify their most-used datasets and certify those in Collibra.',effects:{dataQuality:+8,bizTrust:+8,literacy:+8,budget:-14000,workdays:-12}},
-      {text:'Run a full data lake inventory, register all assets in Collibra, identify and retire duplicates, and certify the authoritative version of the top 50 most-used datasets.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-22000,workdays:-18}},
-      {text:'Full data lake governance: Collibra catalog for all assets, certified datasets, access controls by classification, a data steward for each domain, and a "no ungoverned data" policy for all new lake additions.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-30000,workdays:-22}}
+      {text:'Ask IT to archive all data lake tables that have not been accessed in the last six months.',effects:{dataQuality:+3,bizTrust:+2,literacy:+2,budget:+20000,workdays:-6}},
+      {text:'Have Capital Markets and Servicing identify their most critical datasets and certify those in Collibra as the authoritative versions.',effects:{dataQuality:+8,bizTrust:+8,literacy:+8,budget:-14000,workdays:-12}},
+      {text:'Run a full data lake inventory, register all assets in Collibra, identify and retire duplicates, and certify the top 50 most-used datasets as authoritative.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-22000,workdays:-18}},
+      {text:'Implement full data lake governance in Collibra: catalog all assets, certify datasets, assign domain stewards, enforce access controls by classification, and prohibit new ungoverned additions.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-30000,workdays:-22}}
     ],
     outcomes:[
       {text:'IT archives 1,800 tables. Analysts protest because some archived tables were actually in use and not accessed via the standard tracking method. Trust in IT decreases.',lesson:'Archiving data without understanding usage patterns destroys trust. The catalog must exist before the cleanup — not after.'},
@@ -965,10 +965,10 @@ const SCENARIO_POOL = [
     impact:`📋 If Loan & Behold Mortgage Company submits overstated CRA performance data, it faces a <strong>restatement finding and potential downgrade from "Satisfactory" to "Needs to Improve"</strong> — which would restrict Loan & Behold Mortgage Company\'s ability to open new branches and make acquisitions for 2 years.`,
     collibra:`Collibra\'s Business Glossary needs a CRA-compliant definition of "qualifying community development investment" — built with Finance and Compliance together — and linked to the Finance data assets that feed the CRA submission.`,
     choices:[
-      {text:'Ask Finance to remove the ineligible investments from the total before submission.',effects:{dataQuality:+5,bizTrust:+3,literacy:+3,budget:-6000,workdays:-5}},
-      {text:'Convene Finance and Compliance to agree on CRA eligibility criteria, document in Collibra, and re-screen all investments against the criteria.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-16000,workdays:-14}},
-      {text:'Re-screen investments, document eligibility criteria in Collibra, re-run all three performance components (investments, loans, services), and have outside counsel review the submission.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-28000,workdays:-16}},
-      {text:'Full CRA data governance: criteria in Collibra, all three components re-screened, outside counsel review, and a quarterly CRA data quality review process so next year\'s submission is clean from the start.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-34000,workdays:-18}}
+      {text:'Ask Finance to remove the ineligible investments from the CRA total before the submission is filed.',effects:{dataQuality:+5,bizTrust:+3,literacy:+3,budget:-6000,workdays:-5}},
+      {text:'Convene Finance and Compliance to agree on CRA eligibility criteria, document them in Collibra, and re-screen all investments before submitting.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-16000,workdays:-14}},
+      {text:'Re-screen all investments, document eligibility criteria in Collibra, re-run all three CRA performance components, and have outside counsel review the final submission.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-28000,workdays:-16}},
+      {text:'Establish full CRA data governance: eligibility criteria in Collibra, all three components re-screened, outside counsel review, and a quarterly CRA data quality review so future submissions are clean from the start.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-34000,workdays:-18}}
     ],
     outcomes:[
       {text:'Finance removes the ineligible investments. The total drops to $8.2M — still strong. But Compliance discovers during the exam that HR volunteer hour records contain duplicates that inflate the community service total by 1,200 hours.',lesson:'Fixing one component without reviewing all three leaves the CRA submission exposed on multiple fronts. Governance must audit the whole, not the part.'},
@@ -986,10 +986,10 @@ const SCENARIO_POOL = [
     impact:`📞 This is not an isolated case. A data quality audit reveals <span class="hl">12% of Loan & Behold Mortgage Company\'s borrowers have fragmented records</span> across the three systems — <strong>over 4,800 borrowers who cannot be served as a whole customer.</strong> The CFPB complaint rate from these borrowers is 3x higher than the overall average.`,
     collibra:`Collibra\'s Master Data Management capabilities — combined with a golden record standard for borrower identity — can define what a complete, unique borrower record looks like and how the three systems should resolve conflicts.`,
     choices:[
-      {text:'Ask IT to build a customer match algorithm to link records across the three systems.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-18000,workdays:-12}},
-      {text:'Define a golden record standard for borrower identity in Collibra and use it to deduplicate the 4,800 fragmented records.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-22000,workdays:-16}},
-      {text:'Implement a borrower identity governance program: golden record standard in Collibra, deduplication of 4,800 records, real-time sync between Sales, Servicing, and IT customer master.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-30000,workdays:-20}},
-      {text:'Golden record standard, deduplication, real-time sync, borrower communication protocol update, and a Collibra data quality metric for borrower record completeness — reviewed monthly.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-36000,workdays:-22}}
+      {text:'Ask IT to build a customer match algorithm to link borrower records across Sales, Servicing, and the customer master.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-18000,workdays:-12}},
+      {text:'Define a golden record standard for borrower identity in Collibra and use it to manually deduplicate the 4,800 fragmented records.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-22000,workdays:-16}},
+      {text:'Implement a borrower identity program: golden record standard in Collibra, automated deduplication of 4,800 records, and real-time sync across all three systems.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-30000,workdays:-20}},
+      {text:'Deploy the golden record standard, deduplication, real-time sync, updated borrower communication protocols, and a monthly Collibra quality metric for borrower record completeness.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-36000,workdays:-22}}
     ],
     outcomes:[
       {text:'IT builds a matching algorithm. It links 60% of the fragmented records. The other 40% require manual review IT doesn\'t have time for. CFPB complaint rate improves slightly.',lesson:'Technical matching without a governance standard produces incomplete results. The algorithm needs a definition of "same borrower" that only governance can provide.'},
@@ -1007,10 +1007,10 @@ const SCENARIO_POOL = [
     impact:`📊 Finance\'s capital adequacy model has been <strong>running on stale data for 3 months</strong>. The model feeds the quarterly regulatory capital report. Compliance must now assess whether the report needs to be amended. IT estimates 6 of the 14 APIs have had undocumented changes in the last year.`,
     collibra:`Every third-party API integration should be documented in Collibra as a data asset with a defined steward, a data contract, and a change notification process — so deprecated fields never make it into production models.`,
     choices:[
-      {text:'Ask IT to audit all 14 APIs for current status and report back.',effects:{dataQuality:+4,bizTrust:+3,literacy:+2,budget:-6000,workdays:-6}},
-      {text:'Have Finance validate the capital model inputs and rerun with current API data.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-10000,workdays:-8}},
-      {text:'Catalog all 14 API integrations in Collibra with stewards and data contracts, identify and fix all deprecated field usage, and rerun affected models.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-20000,workdays:-16}},
-      {text:'Full API governance: catalog all 14 in Collibra, stewards assigned, data contracts documented, deprecated field remediation, affected model reruns, Compliance review, and a vendor change notification requirement added to all future API contracts.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-28000,workdays:-18}}
+      {text:'Ask IT to audit all 14 APIs for current status and flag any deprecated or changed fields.',effects:{dataQuality:+4,bizTrust:+3,literacy:+2,budget:-6000,workdays:-6}},
+      {text:'Have Finance validate every input in the capital adequacy model and rerun it with current API data before the next regulatory filing.',effects:{dataQuality:+6,bizTrust:+5,literacy:+3,budget:-10000,workdays:-8}},
+      {text:'Catalog all 14 API integrations in Collibra with named stewards and data contracts, identify all deprecated field usage, and rerun every affected model.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-20000,workdays:-16}},
+      {text:'Catalog all 14 APIs in Collibra, assign stewards, fix deprecated field usage, rerun affected models, and contractually require vendor change notification for all future API agreements.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-28000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT audit reveals 6 APIs with changes. But without Collibra documentation, it\'s unclear which models use which APIs. The audit answer creates more questions than it answers.',lesson:'An audit without a catalog is an investigation. A catalog makes the audit a confirmation. Govern first, then audit.'},
@@ -1028,10 +1028,10 @@ const SCENARIO_POOL = [
     impact:`⚖️ Inconsistent reporting across regulatory, investor, and internal channels creates <strong>potential securities law liability</strong> (investors receiving different data than regulators), HMDA violation risk, and internal decision-making based on wrong data. Legal has flagged this as a material risk requiring immediate governance response.`,
     collibra:`Collibra\'s Business Glossary must define "forbearance," "modification," and "workout completion" once — in a way that satisfies HMDA, investor PSA requirements, and internal management needs — and link those definitions to the systems that feed all three reports.`,
     choices:[
-      {text:'Ask Servicing to identify which report is correct and use that number in all three.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-4000,workdays:-3}},
-      {text:'Convene Compliance, Servicing, and Capital Markets to agree on shared definitions for all three reporting contexts.',effects:{dataQuality:+10,bizTrust:+10,literacy:+10,budget:-14000,workdays:-12}},
-      {text:'Agree on definitions, document in Collibra, trace lineage for all three reports, identify the source of each discrepancy, correct all three, and implement a monthly cross-report reconciliation.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-24000,workdays:-16}},
-      {text:'Full governance response: definitions in Collibra, lineage traced, all three reports corrected, Legal briefed, voluntary CFPB disclosure if warranted, and quarterly cross-report reconciliation with Compliance sign-off.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-30000,workdays:-18}}
+      {text:'Ask Servicing to identify which of the three reports is correct and use that number across all channels.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-4000,workdays:-3}},
+      {text:'Convene Compliance, Servicing, and Capital Markets to agree on shared definitions for forbearance and workout completion, then publish them in Collibra.',effects:{dataQuality:+10,bizTrust:+10,literacy:+10,budget:-14000,workdays:-12}},
+      {text:'Agree on definitions in Collibra, trace lineage for all three reports, correct each one at source, and implement a monthly cross-report reconciliation process.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-24000,workdays:-16}},
+      {text:'Publish definitions in Collibra, trace and correct all three reports, brief Legal, file a voluntary CFPB disclosure if warranted, and run quarterly cross-report reconciliation with Compliance sign-off.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-30000,workdays:-18}}
     ],
     outcomes:[
       {text:'Servicing says the internal dashboard is correct. Compliance says the CFPB report is the primary submission and must be authoritative. They\'ve disagreed on this for 6 months. Nothing changes.',lesson:'Picking a winner without a governance process just relocates the conflict. Definitions must be agreed, not declared.'},
@@ -1049,10 +1049,10 @@ const SCENARIO_POOL = [
     impact:`💰 Finance\'s workforce cost model is <strong>understating headcount by 3.5%</strong>. This has caused the per-employee cost ratio to appear 3.5% better than it actually is — leading to two hiring decisions that Finance would have flagged as over-budget had the correct headcount been used. Total impact: <strong>$420K in unplanned personnel costs.</strong>`,
     collibra:`Collibra\'s Business Glossary needs a single definition of "employee" for financial reporting purposes — distinguishing contractors, part-time staff, interns, and leaves of absence — agreed by HR and Finance together.`,
     choices:[
-      {text:'Ask HR to send Finance an updated headcount export every Monday.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-2000,workdays:-2}},
-      {text:'Build an automated daily sync between HR\'s HRIS and Finance\'s workforce model.',effects:{dataQuality:+8,bizTrust:+6,literacy:+3,budget:-14000,workdays:-10}},
-      {text:'Agree on the definition of "employee" in Collibra, identify why the 65-person gap exists, and build an automated integration with the agreed definition as the filter.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-16000,workdays:-12}},
-      {text:'Define "employee" in Collibra with HR and Finance, trace the 65-person gap to its source, build the integration, correct the cost model, and brief leadership on the historical impact.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-20000,workdays:-14}}
+      {text:'Ask HR to send Finance a fresh headcount export every Monday until the systems are aligned.',effects:{dataQuality:+3,bizTrust:+2,literacy:+1,budget:-2000,workdays:-2}},
+      {text:'Build an automated daily sync between the HRIS and Finance\'s workforce model to keep headcount current.',effects:{dataQuality:+8,bizTrust:+6,literacy:+3,budget:-14000,workdays:-10}},
+      {text:'Agree on a definition of "employee" in Collibra with HR and Finance, identify why the 65-person gap exists, and build an integration using that definition as the filter.',effects:{dataQuality:+12,bizTrust:+10,literacy:+8,budget:-16000,workdays:-12}},
+      {text:'Define "employee" in Collibra jointly with HR and Finance, trace the 65-person gap to its source, correct the cost model, build the integration, and brief leadership on the historical impact.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-20000,workdays:-14}}
     ],
     outcomes:[
       {text:'Monday exports solve the latency problem but not the definition problem. Finance and HR are still counting different people. The gap is smaller but never zero.',lesson:'Data freshness and data definition are different problems. Fixing freshness while the definition is wrong just gives you current wrong data faster.'},
@@ -1070,10 +1070,10 @@ const SCENARIO_POOL = [
     impact:`📉 The 12.5 basis point error on a $380K loan costs Loan & Behold Mortgage Company approximately <span class="hl">$5,700</span>. If this has been occurring every week, the cumulative impact could be significant. Capital Markets estimates that <strong>stale pricing events have occurred on 18 of the last 52 Mondays</strong> — a potential $100K+ exposure.`,
     collibra:`Collibra can document the pricing data lineage — from Capital Markets\' rate model to the pricing engine — and add a data freshness quality rule that alerts the team immediately when the API refresh fails, instead of letting it go undetected until a loan officer notices.`,
     choices:[
-      {text:'Ask IT to fix the Sunday night refresh job and add an email alert if it fails.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-6000,workdays:-5}},
-      {text:'Document the pricing data lineage in Collibra and add a freshness quality rule with a 2-hour alert threshold.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-14000,workdays:-10}},
-      {text:'Fix the refresh job, document lineage in Collibra, add freshness monitoring, audit the last 52 Mondays for stale-price events, and calculate the full financial exposure.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-20000,workdays:-14}},
-      {text:'Full pricing data governance: fix the job, document lineage, freshness monitoring in Collibra, full 52-week audit, Capital Markets sign-off on pricing data contracts, and a daily pricing integrity dashboard.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-24000,workdays:-16}}
+      {text:'Ask IT to fix the Sunday night refresh job and add an email alert to a monitored inbox if it fails.',effects:{dataQuality:+6,bizTrust:+4,literacy:+2,budget:-6000,workdays:-5}},
+      {text:'Document the pricing data lineage in Collibra and add a freshness quality rule with a two-hour alert threshold tied to an on-call responder.',effects:{dataQuality:+10,bizTrust:+8,literacy:+8,budget:-14000,workdays:-10}},
+      {text:'Fix the refresh job, document lineage in Collibra with freshness monitoring, and audit the last 52 Mondays to calculate the full financial exposure.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-20000,workdays:-14}},
+      {text:'Fix the job, document lineage in Collibra, add freshness monitoring, complete the 52-week audit, require Capital Markets sign-off on pricing data contracts, and build a daily pricing integrity dashboard.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-24000,workdays:-16}}
     ],
     outcomes:[
       {text:'IT fixes the job and adds an email alert. But the alert goes to an inbox nobody monitors on weekends. The stale pricing event occurs again 3 weeks later.',lesson:'Alerts that nobody reads are not monitoring. Governance defines who is responsible for responding — not just who receives the notification.'},
@@ -1091,10 +1091,10 @@ const SCENARIO_POOL = [
     impact:`📋 <strong>Incorrect 1098 forms are an IRS reporting violation.</strong> Corrected forms must be issued within 30 days of discovering the error. Borrowers who have already filed their taxes using the incorrect form may need to amend their returns. The IRS penalty for incorrect information returns is <strong>$50 per form</strong> — a potential $140K liability.`,
     collibra:`Collibra\'s Data Lineage for the 1098 extract would have documented the IT change as a lineage-breaking event — alerting Finance and Compliance before the forms were generated. It would also have identified Finance as a downstream consumer who should be notified of any change to the Servicing extract.`,
     choices:[
-      {text:'Issue corrected 1098 forms to all 2,800 affected borrowers immediately.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-22000,workdays:-12}},
-      {text:'Notify the IRS proactively, issue corrected forms, and document the incident for the regulatory file.',effects:{dataQuality:+8,bizTrust:+7,literacy:+4,budget:-28000,workdays:-14}},
-      {text:'Issue corrected forms, notify IRS, document in Collibra the lineage from Servicing extract to 1098 generation, and add Finance and Compliance as change notification stakeholders for any future extract changes.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-32000,workdays:-16}},
-      {text:'Corrected forms, IRS notification, Collibra lineage documentation with stakeholder notifications, IT change management governance update, and a pre-issuance 1098 data quality checklist for Finance.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-36000,workdays:-18}}
+      {text:'Issue corrected 1098 forms to all 2,800 affected borrowers as quickly as possible.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-22000,workdays:-12}},
+      {text:'Notify the IRS proactively about the errors, then issue corrected forms and document the incident for the regulatory file.',effects:{dataQuality:+8,bizTrust:+7,literacy:+4,budget:-28000,workdays:-14}},
+      {text:'Issue corrected forms, notify the IRS, document the Servicing extract lineage in Collibra, and add Finance and Compliance as required change notification stakeholders for any future extract updates.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-32000,workdays:-16}},
+      {text:'Correct all forms, notify the IRS, document lineage in Collibra, update IT change management governance, and build a pre-issuance 1098 data quality checklist Finance runs each December.',effects:{dataQuality:+16,bizTrust:+14,literacy:+10,budget:-36000,workdays:-18}}
     ],
     outcomes:[
       {text:'Corrected forms issued. But Finance discovers a second error batch of 400 forms during issuance. Without lineage documentation, it takes a week to find the second extract issue.',lesson:'Issuing corrections without understanding the full scope of the error risks issuing more corrections. Lineage investigation before remediation saves time and money.'},
@@ -1112,10 +1112,10 @@ const SCENARIO_POOL = [
     impact:`⚠️ Unmasked SSNs in investor data tapes is a <strong>GLBA Safeguards Rule violation</strong> and potentially a state data privacy law violation in 12 states where the borrowers reside. The 3-year window means this is not an isolated event — it\'s a systemic governance failure. Legal estimates the exposure at <strong>$200K-$800K</strong> depending on state AG response.`,
     collibra:`Collibra\'s Data Classification module — with Restricted tags on SSN and income fields — combined with a governed tape extract process would have filtered out sensitive fields automatically. The extract must be rebuilt around classification, not table structure.`,
     choices:[
-      {text:'Ask IT to mask SSNs and income fields in the next tape extract immediately.',effects:{dataQuality:+4,bizTrust:+3,literacy:+2,budget:-6000,workdays:-4}},
-      {text:'Stop all tape distributions immediately, conduct a legal review, and rebuild the extract with proper data masking.',effects:{dataQuality:+8,bizTrust:+5,literacy:+4,budget:-25000,workdays:-12}},
-      {text:'Stop distributions, legal review, rebuild extract using Collibra classification to filter all Restricted fields, notify affected investors, and assess state notification obligations.',effects:{dataQuality:+12,bizTrust:+8,literacy:+8,budget:-40000,workdays:-16}},
-      {text:'Full governance response: stop distributions, legal review, Collibra classification-driven extract rebuild, investor notifications, state AG notifications where required, and a pre-distribution data classification review for all future tapes.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-60000,workdays:-18}}
+      {text:'Ask IT to mask SSNs and income fields in the very next tape extract before any further distributions go out.',effects:{dataQuality:+4,bizTrust:+3,literacy:+2,budget:-6000,workdays:-4}},
+      {text:'Stop all tape distributions immediately, conduct a legal review, and rebuild the extract with proper data masking before resuming.',effects:{dataQuality:+8,bizTrust:+5,literacy:+4,budget:-25000,workdays:-12}},
+      {text:'Halt distributions, complete the legal review, rebuild the extract using Collibra classification to filter all Restricted fields, notify affected investors, and assess state notification obligations.',effects:{dataQuality:+12,bizTrust:+8,literacy:+8,budget:-40000,workdays:-16}},
+      {text:'Stop distributions, conduct legal review, rebuild the extract using Collibra classification, notify investors and state AGs where required, and establish a pre-distribution data classification review for all future tapes.',effects:{dataQuality:+14,bizTrust:+12,literacy:+10,budget:-60000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT masks SSNs going forward. But the 3-year historical exposure is unaddressed. Legal is notified 2 weeks later by an investor\'s attorney. The failure to disclose makes the legal exposure worse.',lesson:'Technical fixes without legal disclosure when a regulatory violation has occurred can significantly increase liability. Governance must involve Legal the moment a violation is suspected.'},
@@ -1133,10 +1133,10 @@ const SCENARIO_POOL = [
     impact:`📋 Those 8 years of records include loans with <strong>active litigation, HMDA data going back 5 years, HR compensation records tied to loan production, and Capital Markets collateral documentation</strong>. Deleting them would violate RESPA retention requirements, destroy litigation evidence, and eliminate the audit trail for past regulatory examinations.`,
     collibra:`Collibra\'s Data Catalog — with retention policies linked to each data asset — would have flagged this decommission request immediately, showing which records have regulatory retention requirements, active legal holds, and downstream dependencies.`,
     choices:[
-      {text:'Put a hold on the decommission until Compliance reviews retention requirements.',effects:{dataQuality:+3,bizTrust:+3,literacy:+3,budget:-5000,workdays:-4}},
-      {text:'Conduct a full data retention assessment of the 420,000 records before any decommission action.',effects:{dataQuality:+8,bizTrust:+7,literacy:+6,budget:-16000,workdays:-14}},
-      {text:'Use Collibra to catalog the legacy system\'s assets, apply retention policies, identify records that must be preserved, and design a tiered migration that saves $120K/year while preserving everything required.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-20000,workdays:-16}},
-      {text:'Full decommission governance: Collibra catalog with retention policies, legal hold review, cross-domain stakeholder sign-off from Compliance, HR, Finance, and Capital Markets, and a governed migration plan.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-26000,workdays:-18}}
+      {text:'Put an immediate hold on the decommission and ask Compliance to review retention requirements before any action proceeds.',effects:{dataQuality:+3,bizTrust:+3,literacy:+3,budget:-5000,workdays:-4}},
+      {text:'Conduct a full retention assessment of all 420,000 records to determine what must be kept before any decommission decision is made.',effects:{dataQuality:+8,bizTrust:+7,literacy:+6,budget:-16000,workdays:-14}},
+      {text:'Use Collibra to catalog the legacy system, apply retention policies to each asset class, identify records that must be preserved, and design a tiered migration that still saves significant cost.',effects:{dataQuality:+12,bizTrust:+12,literacy:+10,budget:-20000,workdays:-16}},
+      {text:'Run full decommission governance: Collibra catalog with retention policies, legal hold review, and sign-off from Compliance, HR, Finance, and Capital Markets before any data is touched.',effects:{dataQuality:+16,bizTrust:+16,literacy:+12,budget:-26000,workdays:-18}}
     ],
     outcomes:[
       {text:'Compliance hold is placed. But without a governed process, the hold stays in place indefinitely. IT cannot decommission, the $180K cost continues, and nobody moves forward.',lesson:'A hold without a process is not governance — it\'s paralysis. Governance must own the path forward, not just the stop order.'},
@@ -1154,10 +1154,10 @@ const SCENARIO_POOL = [
     impact:`⚖️ Telling the CFPB a complaint is "resolved" when the underlying issue is still open is a <strong>serious regulatory misrepresentation</strong>. The CFPB examiner has flagged 12 of these cases in a recent review and is requesting an explanation within 10 days.`,
     collibra:`Collibra\'s Business Glossary needs a unified definition of "complaint" and "resolved" that all four channels agree on — and Collibra\'s catalog should document the complaint data flow so that any governance review can trace a complaint from receipt to resolution across all channels.`,
     choices:[
-      {text:'Ask IT to build a complaint routing integration that shows all four channels in one dashboard.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-18000,workdays:-10}},
-      {text:'Respond to the CFPB inquiry with a root cause explanation and a 60-day remediation plan.',effects:{dataQuality:+4,bizTrust:+6,literacy:+3,budget:-15000,workdays:-8}},
-      {text:'Define "complaint" and "resolved" in Collibra with all four teams, build the integrated view, and correct all 43 CFPB responses with accurate status.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-26000,workdays:-16}},
-      {text:'Definition agreement in Collibra, integrated complaint dashboard, correct all 43 CFPB responses, voluntary disclosure to CFPB, and a cross-channel complaint governance process with weekly Compliance review.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-32000,workdays:-18}}
+      {text:'Ask IT to build a complaint routing dashboard that surfaces all four channels in a single view.',effects:{dataQuality:+5,bizTrust:+4,literacy:+2,budget:-18000,workdays:-10}},
+      {text:'Respond to the CFPB inquiry with a root cause explanation and a 60-day plan to unify complaint tracking.',effects:{dataQuality:+4,bizTrust:+6,literacy:+3,budget:-15000,workdays:-8}},
+      {text:'Define "complaint" and "resolved" in Collibra with all four teams, build the integrated channel view, and correct all 43 inaccurate CFPB responses.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-26000,workdays:-16}},
+      {text:'Agree on definitions in Collibra, build the integrated dashboard, correct all 43 CFPB responses, make a voluntary disclosure, and establish a weekly cross-channel Compliance review.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-32000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT builds the dashboard. But the data in the four channels uses different complaint IDs, different status codes, and different borrower identifiers. Matching them manually takes months.',lesson:'Technical integration without data definition alignment produces a dashboard of fragmented, incomparable data. Governance must define before IT can integrate.'},
@@ -1175,10 +1175,10 @@ const SCENARIO_POOL = [
     impact:`📊 An undocumented, unreviewed model with stale inputs is a <strong>Model Risk Management failure under SR 11-7</strong> — the Federal Reserve\'s guidance on model risk. If discovered during examination, it requires immediate remediation and may trigger enhanced supervisory review. Capital Markets\' current portfolio positions are priced using this model.`,
     collibra:`Collibra\'s Data Catalog should document every model input as a data asset — with lineage to source systems, update frequency, a named steward, and a review date. Model validation is a governance event, not just a quantitative exercise.`,
     choices:[
-      {text:'Ask IT to document the 9 undocumented inputs and identify the source of the 3 stale inputs.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-8000,workdays:-8}},
-      {text:'Pause model use until all 24 inputs are documented and validated.',effects:{dataQuality:+7,bizTrust:+4,literacy:+5,budget:-20000,workdays:-10}},
-      {text:'Catalog all 24 inputs in Collibra with lineage and stewards, replace the 3 stale inputs, complete the model validation documentation, and submit to Model Risk Management.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-24000,workdays:-16}},
-      {text:'Full model data governance: all inputs in Collibra, stale inputs replaced, validation documentation complete, SR 11-7 compliance assessment, annual Collibra-based input review cycle established.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-30000,workdays:-18}}
+      {text:'Ask IT to document the nine undocumented inputs and track down the source of the three stale inputs.',effects:{dataQuality:+4,bizTrust:+3,literacy:+3,budget:-8000,workdays:-8}},
+      {text:'Pause use of the model until all 24 inputs are fully documented and independently validated.',effects:{dataQuality:+7,bizTrust:+4,literacy:+5,budget:-20000,workdays:-10}},
+      {text:'Catalog all 24 inputs in Collibra with lineage and named stewards, replace the three stale inputs with live sources, and complete the model validation submission.',effects:{dataQuality:+12,bizTrust:+10,literacy:+10,budget:-24000,workdays:-16}},
+      {text:'Document all inputs in Collibra, replace stale sources, complete the SR 11-7 compliance assessment, and establish an annual Collibra-based input review cycle going forward.',effects:{dataQuality:+16,bizTrust:+14,literacy:+12,budget:-30000,workdays:-18}}
     ],
     outcomes:[
       {text:'IT documents 7 of 9 inputs. Two require domain expertise IT doesn\'t have — they remain undocumented. Model validation fails. Capital Markets must pause new trade activity until resolved.',lesson:'Technical documentation of model inputs requires business expertise — not just IT investigation. Governance ensures the right people are in the room.'},
@@ -1196,10 +1196,10 @@ const SCENARIO_POOL = [
     impact:`🏦 This is the governance program\'s biggest opportunity. The 3-year roadmap will determine <strong>how $2.4M in data governance investment is allocated</strong>, which business problems get solved first, and whether data governance becomes a permanent strategic capability or reverts to a project after the budget cycle ends.`,
     collibra:`Collibra\'s full platform — Data Catalog, Business Glossary, Data Quality, Data Lineage, Policy Manager, and Workflow — becomes the operating system for enterprise data governance. The roadmap should define which capabilities to mature in which sequence.`,
     choices:[
-      {text:'Present a Collibra adoption roadmap showing which modules to implement in which order.',effects:{dataQuality:+5,bizTrust:+6,literacy:+6,budget:+50000,workdays:-8}},
-      {text:'Present a domain-by-domain roadmap showing the top 3 governance priorities for each of the 7 business domains.',effects:{dataQuality:+8,bizTrust:+12,literacy:+10,budget:+80000,workdays:-10}},
-      {text:'Present a capability maturity roadmap: where Loan & Behold Mortgage Company is today on catalog, glossary, quality, lineage, literacy, and stewardship — and a 3-year target state with milestones for each.',effects:{dataQuality:+10,bizTrust:+14,literacy:+12,budget:+100000,workdays:-12}},
-      {text:'Present an integrated business value roadmap: each governance initiative mapped to a business outcome, a dollar value, a department owner, and a Collibra capability — prioritized by ROI and cross-domain impact.',effects:{dataQuality:+12,bizTrust:+22,literacy:+14,budget:+160000,workdays:-14}}
+      {text:'Present a Collibra platform adoption roadmap showing which modules to implement and in what sequence over three years.',effects:{dataQuality:+5,bizTrust:+6,literacy:+6,budget:+50000,workdays:-8}},
+      {text:'Present a domain-by-domain roadmap showing the top three governance priorities for each of the seven business domains.',effects:{dataQuality:+8,bizTrust:+12,literacy:+10,budget:+80000,workdays:-10}},
+      {text:'Present a capability maturity roadmap: current state across catalog, quality, lineage, and literacy — with a three-year target state and milestones for each capability.',effects:{dataQuality:+10,bizTrust:+14,literacy:+12,budget:+100000,workdays:-12}},
+      {text:'Present an integrated business value roadmap: each governance initiative mapped to a business outcome, a dollar value, a department owner, and a Collibra capability — prioritized by ROI.',effects:{dataQuality:+12,bizTrust:+22,literacy:+14,budget:+160000,workdays:-14}}
     ],
     outcomes:[
       {text:'The Collibra roadmap impresses IT and the CIO. But the CFO asks: "What business problem does each module solve?" and Finance asks: "How does this affect our reporting?" The roadmap doesn\'t answer those questions.',lesson:'Technology roadmaps earn IT budgets. Business value roadmaps earn enterprise budgets. The audience in a board room speaks business, not platform.'},
@@ -1334,9 +1334,14 @@ function buildGamePlan(){
     scheduledEvents[turn] = shuffledEvents[i].id;
   });
 
+  // Build per-scenario choice shuffle orders so answer positions vary
+  const scenarioIds = chosen.map(s=>s.id);
+  const choiceOrders = buildChoiceOrders(scenarioIds);
+
   return {
-    scenarioIds: chosen.map(s=>s.id),
-    scheduledEvents // { turnIndex: eventId }
+    scenarioIds,
+    scheduledEvents, // { turnIndex: eventId }
+    choiceOrders     // { scenarioId: [shuffled original indices] }
   };
 }
 
@@ -1355,50 +1360,202 @@ function getEventForTurn(turn){
   return RANDOM_EVENTS.find(e=>e.id===eventId)||null;
 }
 
-// Best answer is always index 3 in every scenario
+// The best answer index is now randomized per game — stored in Firebase as choiceOrders
+// SCENARIO_BEST_IDX is the original index (3) before shuffling
 const SCENARIO_BEST_IDX = 3;
 
-// ─────────────────────────────────────────────────────
-// AI VOTE — realistic role-biased, imperfect decisions
-// ─────────────────────────────────────────────────────
-function aiVote(roleId, choices) {
-  const weights = choices.map((c, i) => {
-    const e = c.effects;
-    let s = 0;
-    if (roleId === 'cfo') {
-      // CFO: avoids big spends but weighs financial risk — not blindly cheap
-      const b = e.budget||0;
-      const costScore = b>0 ? b*0.5 : b>-15000 ? b*0.15 : b>-30000 ? b*0.08 : b*0.03;
-      s = costScore + (e.bizTrust||0)*2.5 + (e.dataQuality||0)*1.2;
-      if (b===0) s += 3; // CFO occasionally picks the cheap do-nothing option
-    } else if (roleId === 'steward') {
-      // Steward: cares about quality but is time-strapped — prefers practical over comprehensive
-      s = (e.dataQuality||0)*2.5 + (e.literacy||0)*1.5 + (e.bizTrust||0)*0.8;
-      if ((e.budget||0) < -20000) s -= 4;  // budget pressure
-      if (i === 0) s -= 2;                  // time pressure — comprehensive = slow
-      s += (e.budget||0)*0.04;
-    } else if (roleId === 'compliance') {
-      // Compliance: strongly prefers documented, defensible approaches
-      s = (e.dataQuality||0)*3 + (e.bizTrust||0)*1.5 + (e.literacy||0)*0.8;
-      if ((e.budget||0)===0 && (e.dataQuality||0)<=0) s -= 10; // never does nothing
-    } else if (roleId === 'cio') {
-      // CIO: wants scalable architecture, dislikes cheap band-aids
-      s = (e.dataQuality||0)*1.8 + (e.bizTrust||0)*1.5 + (e.literacy||0)*0.8;
-      if ((e.budget||0)>-5000 && (e.dataQuality||0)<5) s -= 5;
-      if ((e.budget||0)<-10000 && (e.budget||0)>-35000) s += 3;
-    } else if (roleId === 'owner') {
-      // Business Data Owner: customer outcomes first, occasionally chases quick wins
-      s = (e.bizTrust||0)*3 + (e.dataQuality||0)*1.5;
-      if (i===1) s += 2; // slight bias to pragmatic middle options
-    } else if (roleId === 'analyst') {
-      // Analyst: wants usable data fast, favours quality and literacy
-      s = (e.dataQuality||0)*1.8 + (e.literacy||0)*2.5 + (e.bizTrust||0)*1.2;
-      if ((e.budget||0)>-15000 && (e.dataQuality||0)>5) s += 2;
-    } else { // dg
-      s = (e.dataQuality||0)*2 + (e.bizTrust||0)*1.8 + (e.literacy||0)*1.5;
-      if ((e.budget||0)<-40000) s -= 2;
+// Per-game shuffle map: choiceOrders[scenarioId] = [shuffled indices into original choices]
+// e.g. [2,0,3,1] means displayed choice A is original index 2, B is 0, C is 3, D is 1
+let ACTIVE_CHOICE_ORDERS = {}; // populated from Firebase game plan
+
+// Build a shuffle order for every scenario in the pool
+function buildChoiceOrders(scenarioIds) {
+  const orders = {};
+  scenarioIds.forEach(id => {
+    // Fisher-Yates shuffle of [0,1,2,3]
+    const arr = [0,1,2,3];
+    for (let i = 3; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i+1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    s += (Math.random()-0.3)*6; // realistic noise
+    orders[id] = arr;
+  });
+  return orders;
+}
+
+// Given a scenario and the current display order, return the displayed choices array
+function getShuffledChoices(sc) {
+  const order = ACTIVE_CHOICE_ORDERS[sc.id];
+  if (!order) return sc.choices;
+  return order.map(origIdx => sc.choices[origIdx]);
+}
+
+// Map a displayed choice index back to original choice index
+function displayToOrigIdx(sc, displayIdx) {
+  const order = ACTIVE_CHOICE_ORDERS[sc.id];
+  if (!order) return displayIdx;
+  return order[displayIdx];
+}
+
+// Map an original choice index to its displayed position
+function origToDisplayIdx(sc, origIdx) {
+  const order = ACTIVE_CHOICE_ORDERS[sc.id];
+  if (!order) return origIdx;
+  return order.indexOf(origIdx);
+}
+
+// ─────────────────────────────────────────────────────
+// AI VOTE — role-authentic, realistically imperfect
+//
+// Design principles:
+// 1. Keep weight multipliers LOW (0.5–1.2) so the raw effect gap
+//    between choices doesn't dominate. Role biases and noise drive
+//    the decision, not which choice has the highest numbers.
+// 2. Use WIDE symmetric noise (±9 to ±11) so each role diverges
+//    from "best" roughly 30–45% of the time — realistic for a
+//    business where people have genuine competing priorities.
+// 3. Each role has a strong characteristic FLAW — a systematic
+//    tendency to pick the wrong option for a good reason:
+//    - Analyst: avoids comprehensive options (too much work for them)
+//    - Owner: chases visible quick wins, impatient with long projects
+//    - Compliance: over-indexes on documentation, underweights speed
+//    - CFO: cost-obsessed, frequently picks the cheapest option
+//    - CIO: dismisses cheap band-aids but also big political initiatives
+//    - Steward: time-strapped, avoids anything that takes many days
+//    - DG: generally good but occasionally over-engineers
+// ─────────────────────────────────────────────────────
+function aiVote(roleId, sc, displayedChoices) {
+  const weights = displayedChoices.map((c, displayIdx) => {
+    const e = c.effects;
+    const origIdx = displayToOrigIdx(sc, displayIdx);
+    const b  = e.budget   || 0;
+    const dq = e.dataQuality || 0;
+    const bt = e.bizTrust || 0;
+    const li = e.literacy || 0;
+    const wd = e.workdays || 0;
+    let s = 0;
+
+    if (roleId === 'analyst') {
+      // Business Analyst: wants fast, usable data fixes. Has too many projects
+      // to champion large governance programs. Picks what solves their daily pain.
+      // FLAW: consistently avoids the comprehensive option even when it's correct,
+      // and has a soft spot for anything that reduces rework quickly.
+      s = dq*0.9 + li*1.1 + bt*0.5;
+      if (b < -15000) s -= 6;        // not their budget to spend
+      if (b < -28000) s -= 10;       // definitely not their call
+      if (wd < -14) s -= 5;          // already stretched thin
+      if (origIdx === 3) s -= 8;     // comprehensive = "not my job to push for this"
+      if (origIdx === 1) s += 5;     // documented quick win = analyst sweet spot
+      if (origIdx === 0) s += 2;     // even a partial fix helps their reports today
+      // Noise: ±10, analyst sometimes surprises everyone by backing the big fix
+      s += (Math.random() * 20) - 10;
+
+    } else if (roleId === 'owner') {
+      // Business Data Owner: accountable for outcomes but balancing operations.
+      // Impatient with multi-month programs. Wants visible wins for their team.
+      // FLAW: gravitates toward whatever creates the fastest visible improvement,
+      // even when it doesn't fix the root cause. Underestimates project scope.
+      s = bt*1.1 + dq*0.8;
+      if (b < -22000) s -= 5;        // operational budget pressure
+      if (wd < -14)   s -= 4;        // team is already busy
+      if (origIdx === 0) s += 4;     // quick action = leadership looks decisive
+      if (origIdx === 1) s += 6;     // visible middle-ground win = owner favorite
+      if (origIdx === 2) s += 2;     // solid approach, acceptable
+      if (origIdx === 3) s -= 5;     // "that's a 6-month project, we need results now"
+      // Sometimes makes the right call when the business risk is obvious
+      if (bt >= 10 && b > -20000) s += 4;
+      s += (Math.random() * 20) - 10;
+
+    } else if (roleId === 'compliance') {
+      // Compliance Officer: values defensibility and audit trails above all else.
+      // Will pick whatever is most documented and most defensible to a regulator.
+      // FLAW: over-indexes on process thoroughness, sometimes choosing slower
+      // options that are auditable over faster ones that actually fix the problem.
+      // Also sometimes paralyzed by the cost of the "right" option.
+      s = dq*1.1 + bt*0.7 + li*0.4;
+      if (b === 0 && dq <= 0) s -= 15; // compliance never does nothing
+      if (b < -32000) s -= 6;          // compliance doesn't control budget
+      if (wd < -16) s -= 3;            // concerned about team overload
+      if (origIdx === 1) s += 6;       // documented middle option = defensible
+      if (origIdx === 2) s += 4;       // solid documented approach
+      if (origIdx === 3) s -= 3;       // most expensive = may not get budget approval
+      if (origIdx === 0) s -= 6;       // doing nothing creates regulatory exposure
+      // When regulatory exposure is high, compliance swings toward comprehensive
+      if (dq >= 12) s += (origIdx === 3 ? 5 : 0);
+      s += (Math.random() * 18) - 9;
+
+    } else if (roleId === 'cfo') {
+      // CFO: Deeply cost-conscious. Anchors hard on cheapest option.
+      // Will only back higher spend when financial exposure is very explicit.
+      // FLAW: underweights long-term quality/trust benefits vs. immediate cost savings.
+      const costScore = b > 0 ? b*0.6
+                      : b > -8000  ? b*0.30
+                      : b > -20000 ? b*0.05
+                      : b*0.01;
+      s = costScore + bt*0.4 + dq*0.25; // very low quality/trust weights
+      if (b === 0)    s += 12;       // free = CFO first instinct, strong pull
+      if (b > -5000)  s += 9;        // very cheap = very appealing
+      if (b > -12000) s += 4;        // cheap-ish = acceptable
+      if (b < -20000) s -= 8;        // expensive = strong resistance
+      if (b < -30000) s -= 14;       // very expensive = almost never
+      if (origIdx === 3) s -= 9;     // most expensive = needs a very strong case
+      if (origIdx === 0) s += 7;     // cheapest = CFO natural lean
+      // CFO backs spend only when regulatory exposure is very severe
+      if (bt >= 16 && b > -18000) s += 7;
+      s += (Math.random() * 18) - 9;
+
+    } else if (roleId === 'cio') {
+      // CIO: Wants technically clean, maintainable solutions. Hates band-aids
+      // but also skeptical of huge governance-led projects that create IT dependencies.
+      // FLAW: dismisses cheap options as "not solving the real problem" AND sometimes
+      // dismisses comprehensive options as "governance overreach into IT architecture."
+      // Sweet spot is mid-tier options that solve the problem cleanly.
+      s = dq*1.0 + bt*0.7 + li*0.5;
+      if (b > -5000 && dq < 5) s -= 9;   // band-aid = CIO actively dislikes
+      if (b > -5000 && dq < 3) s -= 14;  // do-nothing or near-nothing = embarrassing
+      if (b < -8000 && b > -28000) s += 5; // mid-range spend = right-sized for IT
+      if (origIdx === 2) s += 7;           // solid mid-tier technical option = CIO sweet spot
+      if (origIdx === 1) s += 3;           // documented approach, acceptable
+      if (origIdx === 3) s -= 4;           // "kitchen sink" approach = creates dependencies
+      if (origIdx === 0) s -= 7;           // doing nothing creates technical debt
+      s += (Math.random() * 18) - 9;
+
+    } else if (roleId === 'steward') {
+      // Data Steward: Accountable for data quality in specific domains.
+      // Cares genuinely about getting it right but is severely time-constrained.
+      // FLAW: bandwidth pressure causes them to repeatedly underestimate what's needed.
+      // Will pick the option that feels manageable today even when they know
+      // the comprehensive fix is the right answer long-term.
+      s = dq*1.2 + li*0.9 + bt*0.5;
+      if (b < -18000) s -= 6;        // no budget authority for big spend
+      if (wd < -12)   s -= 5;        // already at capacity
+      if (wd < -18)   s -= 9;        // seriously overloaded
+      if (origIdx === 3) s -= 7;     // "I want to do this right but I can't fit it in"
+      if (origIdx === 2) s += 4;     // solid approach that's actually doable
+      if (origIdx === 1) s += 5;     // practical fix within their bandwidth = steward sweet spot
+      if (origIdx === 0) s -= 4;     // doing nothing means quality degrades in their domain
+      // When quality impact is very high, steward occasionally overcomes bandwidth concerns
+      if (dq >= 14) s += (origIdx === 3 ? 6 : 0);
+      s += (Math.random() * 18) - 9;
+
+    } else { // dg — Head of Data Governance
+      // DG: Experienced governance professional. Knows comprehensive solutions
+      // are right but also knows the business won't always follow.
+      // FLAW: reads the room — will sometimes recommend C over D when relationships
+      // are fragile, budget is tight, or they need a quick win for credibility.
+      // Not naive; knows a half-measure that gets done beats a masterplan that stalls.
+      s = dq*0.85 + bt*0.85 + li*0.75; // moderate weights — room for variance
+      if (b < -35000) s -= 7;        // DG is budget-aware — won't blow the program budget
+      if (b < -22000) s -= 2;        // budget-conscious even at moderate spend
+      if (origIdx === 3) s += 3;     // slight preference for comprehensive
+      if (origIdx === 2) s += 4;     // often the pragmatic DG pick — wins trust, still good
+      if (origIdx === 1) s += 1;     // acceptable middle ground
+      if (origIdx === 0) s -= 7;     // doing nothing is a governance program failure
+      // DG picks C over D when budget or workdays are tight
+      if (b < -28000 || wd < -18) s += (origIdx === 2 ? 4 : origIdx === 3 ? -3 : 0);
+      s += (Math.random() * 20) - 10; // widest noise — DG is most context-sensitive
+    }
+
     return s;
   });
   return weights.indexOf(Math.max(...weights));
@@ -1658,7 +1815,8 @@ window.startGameFromLobby = async function(){
   await roomRef().update({
     state:'playing',
     gamePlan: plan.scenarioIds,
-    scheduledEvents: plan.scheduledEvents
+    scheduledEvents: plan.scheduledEvents,
+    choiceOrders: plan.choiceOrders
   });
 };
 
@@ -1677,6 +1835,7 @@ function listenGame(){
     // Load game plan into local state
     if(room.gamePlan) ACTIVE_SCENARIOS = room.gamePlan;
     if(room.scheduledEvents) ACTIVE_EVENTS = room.scheduledEvents;
+    if(room.choiceOrders) ACTIVE_CHOICE_ORDERS = room.choiceOrders;
     const scores = room.scores;
     updateMeters(scores.dataQuality,scores.bizTrust,scores.literacy,scores.budget,scores.workdays);
 
@@ -1721,20 +1880,19 @@ function renderScenarioVote(room){
   const votes = room.votes||{};
   const voteCount = Object.keys(votes).length;
   const totalPlayers = Object.keys(room.players||{}).length;
-  const notes = ROLE_NOTES[myRoleId]||[];
 
+  const choices = getShuffledChoices(sc);
   const collibraBlock = sc.collibra
     ? `<div class="collibra-box"><span class="col-lbl">COLLIBRA</span><span>${sc.collibra}</span></div>` : '';
 
-  const choices = sc.choices.map((c,i)=>{
-    const rNote = notes[room.turn] && notes[room.turn][i]
-      ? `<div class="role-note">${role.icon} ${notes[room.turn][i]}</div>` : '';
+  const choicesHTML = choices.map((c,i)=>{
+    // notes are indexed by original choice index
+    const origIdx = displayToOrigIdx(sc, i);
     const isVoted = myVote===i;
     return `
       <button class="choice-btn ${isVoted?'voted':''}" onclick="castVote(${i})" ${myVote!==null?'disabled':''}>
         <div class="c-top"><span class="c-letter">${letters[i]}</span><span class="c-text">${c.text}</span></div>
         <div class="c-impacts">${buildChips(c.effects)}</div>
-        ${rNote}
       </button>`;
   }).join('');
 
@@ -1770,15 +1928,16 @@ function renderScenarioVote(room){
     ${perspBlock}
     ${voteStatus}
     <div class="vote-label">Your Vote — Impact previews and your role's perspective shown on each option</div>
-    ${choices}
+    ${choicesHTML}
   `;
 
   // AI players auto-vote (organizer triggers AI votes, results auto on all humans done)
   if(isOrganizer && room.players){
+    const displayedChoices = getShuffledChoices(sc);
     const aiUpdates = {};
     Object.values(room.players).forEach(p=>{
       if(p.isAI && (!room.votes || room.votes[p.playerId]===undefined)){
-        aiUpdates[p.playerId] = aiVote(p.roleId, sc.choices);
+        aiUpdates[p.playerId] = aiVote(p.roleId, sc, displayedChoices);
       }
     });
     if(Object.keys(aiUpdates).length>0){
@@ -1814,7 +1973,10 @@ function renderResults(room){
   const votes = room.votes||{};
   const players = room.players||{};
 
-  // Tally
+  // Votes are stored as display indices — get the shuffled display choices
+  const displayedChoices = getShuffledChoices(sc);
+
+  // Tally by display index
   const tally=[0,0,0,0];
   const votersByChoice=[[],[],[],[]];
   Object.entries(votes).forEach(([pid,choiceIdx])=>{
@@ -1824,11 +1986,13 @@ function renderResults(room){
   });
 
   const maxVotes=Math.max(...tally);
-  // Ties: pick lowest index
-  const winnerIdx=tally.indexOf(maxVotes);
+  // Ties: pick lowest display index
+  const winnerDisplayIdx=tally.indexOf(maxVotes);
+  // Map winner display index back to original to get correct effects/outcome
+  const winnerOrigIdx = displayToOrigIdx(sc, winnerDisplayIdx);
 
-  // Apply effects (organizer writes back to db)
-  const effects=sc.choices[winnerIdx].effects;
+  // Apply effects using original index
+  const effects=sc.choices[winnerOrigIdx].effects;
 
   if(isOrganizer){
     const s=room.scores;
@@ -1839,10 +2003,9 @@ function renderResults(room){
       budget:     s.budget+(effects.budget||0),
       workdays:   Math.max(0,(s.workdays||120)+(effects.workdays||0))
     };
-    // Efficiency bonus: if the majority picked the best-outcome choice,
+    // Efficiency bonus: if the majority picked the best-outcome choice (original index 3),
     // governance is working well — award +8 workdays back (time saved by doing it right)
-    const bestIdx = SCENARIO_BEST_IDX; // always 3 — last choice is always best
-    if(winnerIdx === bestIdx){
+    if(winnerOrigIdx === SCENARIO_BEST_IDX){
       newScores.workdays = Math.min(120, newScores.workdays + 8);
     }
     // Check game-over conditions after applying effects
@@ -1859,7 +2022,7 @@ function renderResults(room){
     Object.entries(votes).forEach(([pid, choiceIdx])=>{
       const p = players[pid];
       if(!p) return;
-      if(choiceIdx === winnerIdx){
+      if(choiceIdx === winnerDisplayIdx){
         wc[pid] = (wc[pid]||0) + 1;
       } else {
         // Ensure they have an entry even if 0
@@ -1869,9 +2032,9 @@ function renderResults(room){
     roomRef().update({ scores:newScores, winCounts:wc, resultsFor:room.turn });
   }
 
-  // Render — include player names per choice
-  const tallyHTML=sc.choices.map((c,i)=>{
-    const isWinner=i===winnerIdx;
+  // Render — use displayed choices (shuffled) for tally display
+  const tallyHTML=displayedChoices.map((c,i)=>{
+    const isWinner=i===winnerDisplayIdx;
     const pct=Math.round((tally[i]/Math.max(1,Object.keys(players).length))*100);
     const voterNames=votersByChoice[i].map(p=>{
       const r=ROLES.find(x=>x.id===p.roleId);
@@ -1893,49 +2056,59 @@ function renderResults(room){
       </div>`;
   }).join('');
 
-  // Find roles where at least one human voted against the majority
+    // Find roles where at least one player (human OR AI) voted against the majority
   const dissentingRoles = ROLES.filter(r=>{
-    const inRole = Object.values(players).filter(p=>p.roleId===r.id&&!p.isAI);
-    return inRole.some(p=>votes[p.playerId]!==undefined && votes[p.playerId]!==winnerIdx);
+    const inRole = Object.values(players).filter(p=>p.roleId===r.id);
+    return inRole.some(p=>votes[p.playerId]!==undefined && votes[p.playerId]!==winnerDisplayIdx);
   });
 
-  const dissentHTML=dissentingRoles.length>0
-    ? `<div class="disagree-box"><div class="disagree-title">💬 DEBATE — These roles had players vote differently. Discuss why before moving on.</div>
+  // Unanimous only if every single vote (human + AI) landed on the winner
+  const allVotes = Object.values(votes);
+  const trulyUnanimous = allVotes.length > 0 && allVotes.every(v => v === winnerDisplayIdx);
+
+  const dissentHTML = !trulyUnanimous
+    ? `<div class="disagree-box"><div class="disagree-title">💬 DEBATE — Roles voted differently. Discuss why before moving on.</div>
        <div class="disagree-roles">${dissentingRoles.map(r=>{
-         const dissPlayers = Object.values(players).filter(p=>p.roleId===r.id&&!p.isAI&&votes[p.playerId]!==winnerIdx);
-         return dissPlayers.map(p=>`<span class="disagree-chip" style="color:${r.color};border-color:${r.color}44;">${r.icon} ${p.name||r.name} voted ${letters[votes[p.playerId]]}</span>`).join('');
+         const dissPlayers = Object.values(players).filter(p=>p.roleId===r.id&&votes[p.playerId]!==undefined&&votes[p.playerId]!==winnerDisplayIdx);
+         return dissPlayers.map(p=>`<span class="disagree-chip" style="color:${r.color};border-color:${r.color}44;">${r.icon} ${p.name||(p.isAI?r.name+' (AI)':r.name)} voted ${letters[votes[p.playerId]]}</span>`).join('');
        }).join('')}</div></div>`
     : `<div class="disagree-box" style="background:rgba(39,174,96,.08);border-color:rgba(39,174,96,.2);"><div class="disagree-title" style="color:#a8e6c0;">✅ UNANIMOUS — All players agreed! Rare alignment.</div></div>`;
 
-  const outcome=sc.outcomes[winnerIdx];
-  const notes=ROLE_NOTES;
-
-  // Build reaction cards — one card per role, listing all players in that role
+  // Outcome uses original index
+  const outcome=sc.outcomes[winnerOrigIdx];
+  // Build reaction cards — one card per role, showing what outcome their vote led to
   const reactionsHTML=ROLES.map(r=>{
     const inRole = Object.values(players).filter(x=>x.roleId===r.id);
     if(inRole.length===0) return '';
-    // Use the first player's vote for the note (representative)
+    // Use the first (or first human) player's vote as representative for the role
     const repPlayer = inRole.find(p=>!p.isAI) || inRole[0];
-    const voted = repPlayer ? votes[repPlayer.playerId] : null;
-    const won = voted===winnerIdx;
-    const note = notes[r.id]&&notes[r.id][room.turn] ? notes[r.id][room.turn][voted!==null?voted:0] : '—';
+    const votedDisplay = repPlayer ? votes[repPlayer.playerId] : null;
+    const votedOrig = votedDisplay !== null ? displayToOrigIdx(sc, votedDisplay) : null;
+    const won = votedDisplay===winnerDisplayIdx;
+    // Show the outcome text for the choice this role voted for — always scenario-specific
+    const votedOutcome = (votedOrig !== null && sc.outcomes[votedOrig])
+      ? sc.outcomes[votedOrig].text
+      : '—';
+    const votedChoiceText = (votedOrig !== null && sc.choices[votedOrig])
+      ? sc.choices[votedOrig].text
+      : '—';
     // Build per-player vote badges
     const playerVoteBadges = inRole.map(p=>{
       const pv = votes[p.playerId];
       const pName = p.name||(p.isAI?'AI':'Player');
-      const pWon = pv===winnerIdx;
+      const pWon = pv===winnerDisplayIdx;
       return `<span class="rc-player-badge" style="color:${r.color};">${p.isAI?'🤖':'👤'} ${pName}: ${letters[pv!==undefined?pv:0]} ${pWon?'✅':''}</span>`;
     }).join('');
-    const hasAI = inRole.some(p=>p.isAI);
     return `
       <div class="reaction-card" style="border-color:${r.color}22;">
         <div class="rc-header">
           <span>${r.icon}</span>
           <span class="rc-name" style="color:${r.color};">${r.name}</span>
-          <span class="rc-tag">${won?'✅ Majority':'↩️ Split/Other'}</span>
+          <span class="rc-tag">${won?'✅ With majority':'↩️ Voted differently'}</span>
         </div>
         <div class="rc-player-votes">${playerVoteBadges}</div>
-        <div class="rc-text">${note}</div>
+        <div class="rc-voted-choice">Voted for: <em>${votedChoiceText}</em></div>
+        <div class="rc-text">${votedOutcome}</div>
       </div>`;
   }).filter(Boolean).join('');
 
@@ -1960,7 +2133,7 @@ function renderResults(room){
       </div>
 
       <div class="outcome-divider">
-        <span class="od-badge">Choice ${letters[winnerIdx]} Played Out</span>
+        <span class="od-badge">Choice ${letters[winnerDisplayIdx]} Played Out</span>
       </div>
 
       <h3 class="outcome-header">What Happened</h3>
@@ -2286,7 +2459,6 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .c-letter{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:3px;font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);flex-shrink:0;margin-top:2px;}
 .c-text{font-size:13px;line-height:1.5;flex:1;}
 .c-impacts{display:flex;gap:5px;flex-wrap:wrap;padding:5px 14px 8px 44px;border-top:1px solid rgba(255,255,255,.05);}
-.role-note{font-size:11px;font-style:italic;padding:5px 14px 8px 44px;color:var(--text-light);border-top:1px solid rgba(255,255,255,.04);}
 
 .chip{display:inline-flex;align-items:center;font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:20px;border:1px solid;}
 .chip.pdq{color:var(--green);border-color:rgba(39,174,96,.35);background:rgba(39,174,96,.08);}
@@ -2343,6 +2515,8 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .rc-name{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;font-weight:600;text-transform:uppercase;}
 .rc-tag{font-size:10px;margin-left:auto;color:var(--text-light);}
 .rc-player-votes{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;}
+.rc-voted-choice{font-size:10px;color:var(--text-light);margin-bottom:5px;font-family:'DM Mono',monospace;letter-spacing:.3px;}
+.rc-voted-choice em{color:var(--cream);font-style:normal;}
 .rc-player-badge{font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);}
 .rc-text{font-size:11px;line-height:1.5;color:var(--text-light);}
 
@@ -2446,7 +2620,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
   </div>
 
   <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--text-light);max-width:400px;text-align:center;line-height:1.7;animation:fadeUp .6s .3s ease both;">
-    1–99 players · Multiple people can share a role · Unfilled roles played by AI · Organizer starts when ready
+    1-99 players · Multiple people can share a role · Unfilled roles played by AI · Organizer starts when ready
   </div>
 </div>
 
