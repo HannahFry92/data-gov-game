@@ -1892,8 +1892,10 @@ function renderScenarioVote(room){
     // notes are indexed by original choice index
     const origIdx = displayToOrigIdx(sc, i);
     const isVoted = myVote===i;
+    const votedBadge = isVoted ? `<div class="voted-badge-strip">✅ YOUR VOTE</div>` : '';
     return `
       <button class="choice-btn ${isVoted?'voted':''}" onclick="castVote(${i})" ${myVote!==null?'disabled':''}>
+        ${votedBadge}
         <div class="c-top"><span class="c-letter">${letters[i]}</span><span class="c-text">${c.text}</span></div>
         <div class="c-impacts">${buildChips(c.effects)}</div>
       </button>`;
@@ -2087,7 +2089,15 @@ function renderResults(room){
     const workdaysGone= newScores.workdays <= 0;
     if(budgetGone || workdaysGone){
       const reason = budgetGone ? 'budget' : 'workdays';
-      roomRef().update({ scores:newScores, gameOverReason:reason, state:'ended' });
+      const killerChoice = {
+        scenarioTitle: sc.title,
+        choiceLetter:  letters[winnerDisplayIdx],
+        choiceText:    sc.choices[winnerOrigIdx].text,
+        outcomeText:   sc.outcomes[winnerOrigIdx].text,
+        effects:       effects,
+        turn:          room.turn + 1
+      };
+      roomRef().update({ scores:newScores, gameOverReason:reason, killerChoice, state:'ended' });
       return;
     }
     // Update win counts — track every player (AI + human) individually
@@ -2234,9 +2244,12 @@ function renderResults(room){
 window.nextScenario = async function(currentTurn){
   if(!isOrganizer) return;
   const nextTurn = currentTurn + 1;
-  // Check if a random event is scheduled for the next turn
   const event = getEventForTurn(nextTurn);
-  await roomRef().update({ turn: nextTurn, state: event ? 'event' : 'playing', votes:{} });
+  // Explicitly delete votes and tie nodes — Firebase ignores votes:{} (empty object = no-op)
+  await roomRef('/votes').remove();
+  await roomRef('/tiedIndices').remove();
+  await roomRef('/tiebreaker').remove();
+  await roomRef().update({ turn: nextTurn, state: event ? 'event' : 'playing' });
 };
 
 // ─────────────────────────────────────────────────────
@@ -2359,6 +2372,29 @@ function renderEnd(room){
   document.getElementById('end-title').textContent=title;
   document.getElementById('end-sub').textContent=subtitle;
   document.getElementById('end-story').textContent=story;
+
+  const killerEl = document.getElementById('killer-choice-block');
+  if(killerEl){
+    if(room.killerChoice){
+      const kc = room.killerChoice;
+      const reasonLabel = room.gameOverReason === 'budget' ? 'Budget ran out' : 'Work capacity exhausted';
+      killerEl.innerHTML = `
+        <div class="killer-card">
+          <div class="killer-label">☠️ ${reasonLabel} after Scenario ${kc.turn}</div>
+          <div class="killer-scenario">${kc.scenarioTitle}</div>
+          <div class="killer-choice">
+            <span class="killer-letter">${kc.choiceLetter}</span>
+            <span class="killer-text">${kc.choiceText}</span>
+          </div>
+          <div class="killer-outcome">${kc.outcomeText}</div>
+          <div class="killer-deltas">${buildDeltas(kc.effects)}</div>
+          <div class="killer-lesson">This choice ${room.gameOverReason==='budget'?'exceeded the remaining budget':'consumed the last available work days'}. When resources run out before the year ends, the governance program cannot continue.</div>
+        </div>`;
+      killerEl.style.display = 'block';
+    } else {
+      killerEl.style.display = 'none';
+    }
+  }
 
   const wdRemain = s.workdays||0;
   document.getElementById('final-scores').innerHTML=`
@@ -2529,9 +2565,12 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .choice-btn::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform .2s;}
 .choice-btn:hover:not(:disabled){border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.05);transform:translateX(3px);}
 .choice-btn:hover:not(:disabled)::before{transform:scaleY(1);}
-.choice-btn.voted{border-color:var(--green);background:rgba(39,174,96,.07);}
-.choice-btn.voted::before{transform:scaleY(1);background:var(--green);}
-.choice-btn:disabled{opacity:.75;cursor:default;}
+.choice-btn.voted{border-color:var(--green);background:rgba(39,174,96,.13);box-shadow:0 0 0 2px rgba(39,174,96,.35);}
+.choice-btn.voted::before{transform:scaleY(1);background:var(--green);width:5px;}
+.choice-btn.voted .c-letter{background:rgba(39,174,96,.3);border-color:var(--green);color:#a8e6c0;}
+.choice-btn:disabled{cursor:default;}
+.choice-btn:disabled:not(.voted){opacity:.45;}
+.voted-badge-strip{background:rgba(39,174,96,.2);border-bottom:1px solid rgba(39,174,96,.3);padding:5px 14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:#a8e6c0;font-weight:600;}
 .c-top{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 8px;}
 .c-letter{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:3px;font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);flex-shrink:0;margin-top:2px;}
 .c-text{font-size:13px;line-height:1.5;flex:1;}
@@ -2623,6 +2662,15 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .mvp-table tr:last-child td{border-bottom:none;}
 .mvp-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;padding:2px 7px;border-radius:10px;margin-left:5px;background:rgba(201,168,76,.15);color:var(--gold);}
 .end-story-card{background:var(--card-bg);border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:22px 26px;max-width:580px;width:100%;text-align:left;margin-bottom:20px;font-size:13px;line-height:1.75;color:#c5d8e8;}
+.killer-card{background:rgba(231,76,60,.07);border:1px solid rgba(231,76,60,.3);border-radius:8px;padding:20px 24px;text-align:left;}
+.killer-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--red);text-transform:uppercase;margin-bottom:8px;}
+.killer-scenario{font-family:'DM Serif Display',serif;font-size:16px;color:var(--cream);margin-bottom:12px;}
+.killer-choice{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.04);border-radius:6px;padding:10px 12px;margin-bottom:10px;}
+.killer-letter{font-family:'DM Mono',monospace;font-size:13px;color:var(--red);font-weight:700;flex-shrink:0;}
+.killer-text{font-size:12px;color:#c5d8e8;line-height:1.5;}
+.killer-outcome{font-size:12px;color:var(--text-light);line-height:1.6;margin-bottom:10px;font-style:italic;}
+.killer-deltas{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.killer-lesson{font-size:11px;color:var(--text-light);line-height:1.6;border-top:1px solid rgba(255,255,255,.07);padding-top:10px;}
 .end-story-card h3{font-family:'DM Serif Display',serif;font-size:17px;color:var(--gold);margin-bottom:9px;}
 
 /* Name entry */
@@ -2780,6 +2828,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
     <table class="mvp-table" id="mvp-table"></table>
   </div>
   <div class="end-story-card"><h3>Final Report</h3><p id="end-story"></p></div>
+  <div id="killer-choice-block" style="max-width:580px;width:100%;margin-bottom:20px;display:none;"></div>
   <button class="btn-gold" style="max-width:220px;" onclick="restartGame()">Play Again</button>
 </div>
 
