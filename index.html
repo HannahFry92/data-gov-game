@@ -1952,6 +1952,34 @@ function renderScenarioVote(room){
 }
 
 window.castVote = async function(choiceIdx){
+  // ── Immediate local feedback — don't wait for Firebase round-trip ──────────
+  // Disable all buttons right away so the user can't double-vote
+  document.querySelectorAll('.choice-btn').forEach((btn, i) => {
+    btn.disabled = true;
+    if(i === choiceIdx){
+      btn.classList.add('voted');
+      // Insert the YOUR VOTE badge if not already there
+      if(!btn.querySelector('.voted-badge-strip')){
+        const badge = document.createElement('div');
+        badge.className = 'voted-badge-strip';
+        badge.textContent = '✅ YOUR VOTE';
+        btn.insertBefore(badge, btn.firstChild);
+      }
+      // Green letter badge
+      const letter = btn.querySelector('.c-letter');
+      if(letter) letter.style.cssText = 'background:rgba(39,174,96,.3);border-color:var(--green);color:#a8e6c0;';
+    } else {
+      btn.style.opacity = '0.45';
+    }
+  });
+  // Update the vote status text immediately
+  const statusEl = document.querySelector('.vote-status');
+  if(statusEl){
+    const letters = ['A','B','C','D'];
+    statusEl.className = 'vote-status voted-status';
+    statusEl.textContent = `✅ You voted Choice ${letters[choiceIdx]} — waiting for other players...`;
+  }
+  // ── Now write to Firebase ──────────────────────────────────────────────────
   await roomRef('/votes').update({ [myPlayerId]: choiceIdx });
   // Any player triggers results check after voting
   const [vSnap, pSnap] = await Promise.all([
